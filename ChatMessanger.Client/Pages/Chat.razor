@@ -1,0 +1,65 @@
+﻿@page "/chat"
+@inject NavigationManager NavigationManager
+@inject ApiMessageService ApiMessageService
+
+<h3>Chat</h3>
+@if (IsConnected())
+{
+    <input type="text" @bind="userName" />
+    <input type="text" @bind="message" />
+    <input type="button" value="Send" @onclick="Send" />
+
+    <ul id="charRoom">
+        @foreach (var message in messages)
+        {
+            <li>@message</li>
+        }
+    </ul>
+}
+else
+{
+    <p>Connecting....</p>
+}
+
+@code {
+    private HubConnection hubConnection;
+    private List<string> messages = new List<string>();
+    private string userName;
+    private string message;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+        .WithUrl("https://localhost:7005/chathub")
+        .Build();
+
+        hubConnection.On<string, string>("ReceiveMessage", (userName, message) =>
+        {
+            var resultMsg = $"{userName}: {message}";
+            messages.Add(resultMsg);
+            StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+    }
+
+    async Task Send()
+    {
+        await hubConnection.SendAsync("SendMessage", userName, message);
+        var messageDto = new MessageDTO()
+        {
+            UserName = userName,
+            Text = message,
+            TimeOfSend = DateTime.Now.ToString()
+        };
+
+        await SaveMessage(messageDto);
+    }
+
+    async Task SaveMessage(MessageDTO messageDTO)
+    {
+        await ApiMessageService.SaveMessageAsync(messageDTO);
+    }
+    
+    public bool IsConnected() => hubConnection.State == HubConnectionState.Connected;
+}

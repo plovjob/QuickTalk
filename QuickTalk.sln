@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.Server", "QuickTalk.Server\QuickTalk.Messages.Server.csproj", "{B8DC4329-C8A9-4B15-8B4D-C236591ED752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Client", "QuickTalk.Client\QuickTalk.Client.csproj", "{FB763408-C849-4E79-A9B7-2AE884F6DD81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messages", "Messages", "{0E9016CF-4BE0-46ED-9F37-4C67766B6743}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{10CA19C1-5DC3-4088-B0E2-A7A8B3171F67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8DC4329-C8A9-4B15-8B4D-C236591ED752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8DC4329-C8A9-4B15-8B4D-C236591ED752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8DC4329-C8A9-4B15-8B4D-C236591ED752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8DC4329-C8A9-4B15-8B4D-C236591ED752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB763408-C849-4E79-A9B7-2AE884F6DD81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB763408-C849-4E79-A9B7-2AE884F6DD81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB763408-C849-4E79-A9B7-2AE884F6DD81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB763408-C849-4E79-A9B7-2AE884F6DD81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B8DC4329-C8A9-4B15-8B4D-C236591ED752} = {0E9016CF-4BE0-46ED-9F37-4C67766B6743}
+		{FB763408-C849-4E79-A9B7-2AE884F6DD81} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8} = {10CA19C1-5DC3-4088-B0E2-A7A8B3171F67}
+		{0E9016CF-4BE0-46ED-9F37-4C67766B6743} = {10CA19C1-5DC3-4088-B0E2-A7A8B3171F67}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D7FE2A2-DA95-4E29-8F0E-DCB65CF75076}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Application\obj\Debug\net9.0\QuickTalk.Messages.Application.csproj.AssemblyReference.cache
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Application\obj\Debug\net9.0\QuickTalk.Messages.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Application\obj\Debug\net9.0\QuickTalk.Messages.Application.AssemblyInfoInputs.cache
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Application\obj\Debug\net9.0\QuickTalk.Messages.Application.AssemblyInfo.cs
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Application\obj\Debug\net9.0\QuickTalk.Messages.Application.csproj.CoreCompileInputs.cache
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Application\obj\Debug\net9.0\QuickTalk.Messages.Application.sourcelink.json

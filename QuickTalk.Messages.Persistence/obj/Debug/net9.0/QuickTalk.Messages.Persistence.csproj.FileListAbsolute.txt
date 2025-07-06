@@ -1,0 +1,6 @@
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.csproj.AssemblyReference.cache
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.AssemblyInfoInputs.cache
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.AssemblyInfo.cs
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.sourcelink.json

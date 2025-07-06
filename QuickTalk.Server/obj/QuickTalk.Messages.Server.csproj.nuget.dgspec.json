@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\QuickTalk.Messages.Server.csproj": {}
+    "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Server\\QuickTalk.Messages.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\QuickTalk.Messages.Server.csproj": {
+    "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Server\\QuickTalk.Messages.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\QuickTalk.Messages.Server.csproj",
+        "projectUniqueName": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Server\\QuickTalk.Messages.Server.csproj",
         "projectName": "QuickTalk.Messages.Server",
-        "projectPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\QuickTalk.Messages.Server.csproj",
+        "projectPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Server\\QuickTalk.Messages.Server.csproj",
         "packagesPath": "C:\\Users\\Антон\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\obj\\",
+        "outputPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -94,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

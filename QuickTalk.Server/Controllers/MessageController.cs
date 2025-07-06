@@ -32,8 +32,10 @@ namespace QuickTalk.Server.Controllers
             {
                 UserName = messageDto.UserName,
                 Text = messageDto.Text,
+                //создавать самим время на сервере
                 TimeOfSend = messageDto.TimeOfSend
             };
+
 
             _messageService.SaveMessageAsync(message);
             return Ok();

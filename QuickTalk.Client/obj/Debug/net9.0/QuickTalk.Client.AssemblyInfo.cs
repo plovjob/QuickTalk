@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuickTalk.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2e6310c050adeb5aaff64dd6aa17fc8c0f61277")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+890996e661d7e33e37c8493c90fce72eadda3c95")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuickTalk.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuickTalk.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

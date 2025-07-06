@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BZ1ltd4f3iE=",
+  "dgSpecHash": "qS72CVnAAHM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\QuickTalk.Messages.Server.csproj",
+  "projectFilePath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Server\\QuickTalk.Messages.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Антон\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Антон\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

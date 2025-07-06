@@ -1,30 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\",
+  "WorkspaceRootPath": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|c:\\users\\\u0430\u043D\u0442\u043E\u043D\\source\\repos\\quicktalk\\quicktalk\\quicktalk.server\\interfaces\\imessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|solutionrelative:quicktalk.server\\interfaces\\imessenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}|QuickTalk.Messages.WebApi\\QuickTalk.Messages.WebApi.csproj|c:\\users\\\u0430\u043D\u0442\u043E\u043D\\source\\repos\\quicktalk\\quicktalk.messages.webapi\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}|QuickTalk.Messages.WebApi\\QuickTalk.Messages.WebApi.csproj|solutionrelative:quicktalk.messages.webapi\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|c:\\users\\\u0430\u043D\u0442\u043E\u043D\\source\\repos\\quicktalk\\quicktalk\\quicktalk.server\\services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|solutionrelative:quicktalk.server\\services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}|QuickTalk.Messages.WebApi\\QuickTalk.Messages.WebApi.csproj|c:\\users\\\u0430\u043D\u0442\u043E\u043D\\source\\repos\\quicktalk\\quicktalk.messages.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}|QuickTalk.Messages.WebApi\\QuickTalk.Messages.WebApi.csproj|solutionrelative:quicktalk.messages.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|c:\\users\\\u0430\u043D\u0442\u043E\u043D\\source\\repos\\quicktalk\\quicktalk\\quicktalk.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|solutionrelative:quicktalk.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|c:\\users\\\u0430\u043D\u0442\u043E\u043D\\source\\repos\\quicktalk\\quicktalk\\quicktalk.server\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|solutionrelative:quicktalk.server\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|c:\\users\\\u0430\u043D\u0442\u043E\u043D\\source\\repos\\quicktalk\\quicktalk\\quicktalk.server\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|solutionrelative:quicktalk.server\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|c:\\users\\\u0430\u043D\u0442\u043E\u043D\\source\\repos\\quicktalk\\quicktalk\\quicktalk.server\\migrations\\20250626170520_init.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8DC4329-C8A9-4B15-8B4D-C236591ED752}|QuickTalk.Server\\QuickTalk.Server.csproj|solutionrelative:quicktalk.server\\migrations\\20250626170520_init.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}|QuickTalk.Messages.WebApi\\QuickTalk.Messages.WebApi.csproj|c:\\users\\\u0430\u043D\u0442\u043E\u043D\\source\\repos\\quicktalk\\quicktalk.messages.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}|QuickTalk.Messages.WebApi\\QuickTalk.Messages.WebApi.csproj|solutionrelative:quicktalk.messages.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,85 +22,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IMessenger.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Interfaces\\IMessenger.cs",
-              "RelativeDocumentMoniker": "QuickTalk.Server\\Interfaces\\IMessenger.cs",
-              "ToolTip": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Interfaces\\IMessenger.cs",
-              "RelativeToolTip": "QuickTalk.Server\\Interfaces\\IMessenger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T16:01:49.877Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MessageService.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Services\\MessageService.cs",
-              "RelativeDocumentMoniker": "QuickTalk.Server\\Services\\MessageService.cs",
-              "ToolTip": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Services\\MessageService.cs",
-              "RelativeToolTip": "QuickTalk.Server\\Services\\MessageService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T16:01:46.577Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk.Messages.WebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "QuickTalk.Messages.WebApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk.Messages.WebApi\\appsettings.json",
+              "RelativeToolTip": "QuickTalk.Messages.WebApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-06T20:05:55.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Program.cs",
-              "RelativeDocumentMoniker": "QuickTalk.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Program.cs",
-              "RelativeToolTip": "QuickTalk.Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T16:01:45.246Z",
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk.Messages.WebApi\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "QuickTalk.Messages.WebApi\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk.Messages.WebApi\\Properties\\launchSettings.json",
+              "RelativeToolTip": "QuickTalk.Messages.WebApi\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-06T20:04:59.564Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Migrations\\AppDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "QuickTalk.Server\\Migrations\\AppDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Migrations\\AppDbContextModelSnapshot.cs",
-              "RelativeToolTip": "QuickTalk.Server\\Migrations\\AppDbContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T16:01:41.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "MessageController.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Controllers\\MessageController.cs",
-              "RelativeDocumentMoniker": "QuickTalk.Server\\Controllers\\MessageController.cs",
-              "ToolTip": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Controllers\\MessageController.cs",
-              "RelativeToolTip": "QuickTalk.Server\\Controllers\\MessageController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAXAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk.Messages.WebApi\\Controllers\\MessageController.cs",
+              "RelativeDocumentMoniker": "QuickTalk.Messages.WebApi\\Controllers\\MessageController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk.Messages.WebApi\\Controllers\\MessageController.cs",
+              "RelativeToolTip": "QuickTalk.Messages.WebApi\\Controllers\\MessageController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T16:01:39.165Z",
+              "WhenOpened": "2025-07-06T20:04:41.267Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 90,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20250626170520_init.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Migrations\\20250626170520_init.Designer.cs",
-              "RelativeDocumentMoniker": "QuickTalk.Server\\Migrations\\20250626170520_init.Designer.cs",
-              "ToolTip": "C:\\Users\\\u0410\u043D\u0442\u043E\u043D\\source\\repos\\QuickTalk\\QuickTalk\\QuickTalk.Server\\Migrations\\20250626170520_init.Designer.cs",
-              "RelativeToolTip": "QuickTalk.Server\\Migrations\\20250626170520_init.Designer.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAIBJwA8AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T16:00:26.141Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             }
           ]
         }

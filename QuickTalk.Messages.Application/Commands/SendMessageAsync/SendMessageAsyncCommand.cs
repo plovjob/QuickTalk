@@ -1,10 +1,9 @@
-﻿using MediatR;
-using QuickTalk.Messages.Domain.Entities;
+using MediatR;
+using QuickTalk.Messages.Domain.Dto;
 
-namespace QuickTalk.Messages.Application.Commands.SendMessage
+namespace QuickTalk.Messages.Application.Commands.SendMessage;
+
+public class SendMessageAsyncCommand(MessageDto Message) : IRequest
 {
-    public class SendMessageAsyncCommand : IRequest
-    {
-        public Message Message { get; set; }
-    }
+    public MessageDto Message { get; } = Message;
 }

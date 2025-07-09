@@ -1,24 +1,14 @@
-﻿using MediatR;
-using QuickTalk.Messages.Domain.Entities;
+using MediatR;
+using QuickTalk.Messages.Domain.Dto;
 using QuickTalk.Messages.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace QuickTalk.Messages.Application.Queries.GetAllMessagesAsync
+namespace QuickTalk.Messages.Application.Queries.GetAllMessagesAsync;
+
+public class GetAllMessagesAsyncRequestHandler(IMessageRepository messageRepository) : IRequestHandler<GetAllMessagesAsyncRequest, IEnumerable<MessageDto>>
 {
-    public class GetAllMessagesAsyncRequestHandler : IRequestHandler<GetAllMessagesAsyncRequest, IList<Message>>
+    public async Task<IEnumerable<MessageDto>> Handle(GetAllMessagesAsyncRequest request, CancellationToken cancellationToken = default)
     {
-        private readonly IMessageRepository _messageRepository;
-        public GetAllMessagesAsyncRequestHandler(IMessageRepository messageRepository)
-        {
-            _messageRepository = messageRepository;
-        }
-        public async Task<IList<Message>> Handle(GetAllMessagesAsyncRequest request, CancellationToken cancellationToken = default)
-        {
-            return await _messageRepository.GetAllMessagesAsync();
-        }
+        var messages = await messageRepository.GetAllMessagesAsync();
+        return messages.Select(e => new MessageDto(e.UserName, e.Text));
     }
 }

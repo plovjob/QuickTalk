@@ -1,8 +1,6 @@
-﻿using MediatR;
-using QuickTalk.Messages.Domain.Entities;
+using MediatR;
+using QuickTalk.Messages.Domain.Dto;
 
+namespace QuickTalk.Messages.Application.Queries.GetAllMessagesAsync;
 
-namespace QuickTalk.Messages.Application.Queries.GetAllMessagesAsync
-{
-    public class GetAllMessagesAsyncRequest : IRequest<IList<Message>> { }
-}
+public class GetAllMessagesAsyncRequest : IRequest<IEnumerable<MessageDto>>;

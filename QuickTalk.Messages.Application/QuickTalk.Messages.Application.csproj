@@ -1,17 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="MediatR" Version="13.0.0" />
-  </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\QuickTalk.Messages.Domain\QuickTalk.Messages.Domain.csproj" />
+    <ProjectReference Include="..\QuickTalk.Messages.Persistence\QuickTalk.Messages.Persistence.csproj" />
   </ItemGroup>
-
 </Project>

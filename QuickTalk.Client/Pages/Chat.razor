@@ -1,4 +1,4 @@
-﻿@page "/chat"
+@page "/chat"
 @using ChatMessanger.Client.Services
 @inject NavigationManager NavigationManager
 @inject ApiMessageService ApiMessageService
@@ -51,7 +51,7 @@ else
         {
             UserName = userName,
             Text = message,
-            TimeOfSend = DateTime.Now.ToString()
+            TimeOfSend = DateTime.UtcNow
         };
 
         await SaveMessage(messageDto);

@@ -1,10 +1,9 @@
-﻿using QuickTalk.Messages.Domain.Entities;
+using QuickTalk.Messages.Domain.Entities;
 
-namespace QuickTalk.Messages.Domain.Interfaces
+namespace QuickTalk.Messages.Domain.Interfaces;
+
+public interface IMessageRepository
 {
-    public interface IMessageRepository
-    {
-        Task SendMessageAsync(Message message);
-        Task<IList<Message>> GetAllMessagesAsync();
-    }
+    Task SendMessageAsync(Message message);
+    Task<IEnumerable<Message>> GetAllMessagesAsync();
 }

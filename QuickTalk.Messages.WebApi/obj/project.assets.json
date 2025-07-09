@@ -1611,7 +1611,8 @@
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "MediatR": "13.0.0",
-          "QuickTalk.Messages.Domain": "1.0.0"
+          "QuickTalk.Messages.Domain": "1.0.0",
+          "QuickTalk.Messages.Persistence": "1.0.0"
         },
         "compile": {
           "bin/placeholder/QuickTalk.Messages.Application.dll": {}
@@ -1634,6 +1635,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "Microsoft.AspNetCore.OpenApi": "9.0.1",
           "Microsoft.EntityFrameworkCore": "9.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.6",
           "QuickTalk.Messages.Domain": "1.0.0"
@@ -4580,6 +4582,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.6",
       "QuickTalk.Messages.Application >= 1.0.0",
+      "QuickTalk.Messages.Domain >= 1.0.0",
       "QuickTalk.Messages.Persistence >= 1.0.0"
     ]
   },
@@ -4618,6 +4621,9 @@
             "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Application\\QuickTalk.Messages.Application.csproj": {
               "projectPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Application\\QuickTalk.Messages.Application.csproj"
             },
+            "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Domain\\QuickTalk.Messages.Domain.csproj": {
+              "projectPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Domain\\QuickTalk.Messages.Domain.csproj"
+            },
             "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Persistence\\QuickTalk.Messages.Persistence.csproj": {
               "projectPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Persistence\\QuickTalk.Messages.Persistence.csproj"
             }
@@ -4625,6 +4631,7 @@
         }
       },
       "warningProperties": {
+        "allWarningsAsErrors": true,
         "warnAsError": [
           "NU1605"
         ]
@@ -4634,7 +4641,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -4688,7 +4695,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/t62z2nPG68=",
+  "dgSpecHash": "XC81LRZcT5M=",
   "success": true,
   "projectFilePath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Client\\QuickTalk.Client.csproj",
   "expectedPackageFiles": [
@@ -36,11 +36,11 @@
     "C:\\Users\\Антон\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.6\\microsoft.extensions.primitives.9.0.6.nupkg.sha512",
     "C:\\Users\\Антон\\.nuget\\packages\\microsoft.jsinterop\\9.0.6\\microsoft.jsinterop.9.0.6.nupkg.sha512",
     "C:\\Users\\Антон\\.nuget\\packages\\microsoft.jsinterop.webassembly\\9.0.6\\microsoft.jsinterop.webassembly.9.0.6.nupkg.sha512",
-    "C:\\Users\\Антон\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.1\\microsoft.net.illink.tasks.9.0.1.nupkg.sha512",
-    "C:\\Users\\Антон\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.1\\microsoft.net.sdk.webassembly.pack.9.0.1.nupkg.sha512",
+    "C:\\Users\\Антон\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.2\\microsoft.net.illink.tasks.9.0.2.nupkg.sha512",
+    "C:\\Users\\Антон\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.2\\microsoft.net.sdk.webassembly.pack.9.0.2.nupkg.sha512",
     "C:\\Users\\Антон\\.nuget\\packages\\system.net.serversentevents\\9.0.6\\system.net.serversentevents.9.0.6.nupkg.sha512",
     "C:\\Users\\Антон\\.nuget\\packages\\system.threading.channels\\9.0.6\\system.threading.channels.9.0.6.nupkg.sha512",
-    "C:\\Users\\Антон\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\9.0.1\\microsoft.netcore.app.runtime.mono.browser-wasm.9.0.1.nupkg.sha512"
+    "C:\\Users\\Антон\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\9.0.2\\microsoft.netcore.app.runtime.mono.browser-wasm.9.0.2.nupkg.sha512"
   ],
   "logs": []
 }

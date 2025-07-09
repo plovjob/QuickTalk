@@ -1,9 +1,8 @@
-﻿namespace QuickTalk.Client.Models
+namespace QuickTalk.Client.Models;
+
+public class MessageDTO
 {
-    public class MessageDTO
-    {
-        public string UserName { get; set; }
-        public string Text { get; set; }
-        public string TimeOfSend { get; set; }
-    }
+    public string UserName { get; set; } = null!;
+    public string Text { get; set; } = null!;
+    public DateTime TimeOfSend { get; set; }
 }

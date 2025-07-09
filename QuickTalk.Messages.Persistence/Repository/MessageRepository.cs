@@ -1,41 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
-using QuickTalk.Messages.Domain.Dto;
+using Microsoft.EntityFrameworkCore;
 using QuickTalk.Messages.Domain.Entities;
 using QuickTalk.Messages.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace QuickTalk.Messages.Persistence.Repository
+namespace QuickTalk.Messages.Persistence.Repository;
+
+public class MessageRepository(MessageDbContext messageDbContext) : IMessageRepository
 {
-    public class MessageRepository : IMessageRepository
+    public async Task<IEnumerable<Message>> GetAllMessagesAsync()
     {
-        private MessageDbContext _messageDbContext;
-        public MessageRepository(MessageDbContext messageDbContext)
-        {
-            _messageDbContext = messageDbContext;
-        }
+        return await messageDbContext.Messages.ToListAsync();
+    }
 
-        public async Task<IList<Message>> GetAllMessagesAsync()
-        {
-            var allMessages = await _messageDbContext.Messages.Select(m
-                => new MessageDto
-                {
-                    UserName = m.UserName,
-                    Text = m.Text,
-                    TimeOfSend = m.TimeOfSend
-                }).ToListAsync();
+    public async Task SendMessageAsync(Message message)
+    {
 
-            return allMessages;
-        }
-
-        //что то надо сделать с возвратом
-        public async Task SendMessageAsync(Message message)
-        {
-            await _messageDbContext.Messages.AddAsync(message);
-            _messageDbContext.SaveChanges();
-        }
+        await messageDbContext.Messages.AddAsync(message);
+        await messageDbContext.SaveChangesAsync();
     }
 }

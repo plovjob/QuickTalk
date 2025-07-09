@@ -1,14 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using QuickTalk.Messages.Domain.Entities;
 
-namespace QuickTalk.Messages.Persistence
+namespace QuickTalk.Messages.Persistence;
+
+public class MessageDbContext(DbContextOptions options) : DbContext(options)
 {
-    public class MessageDbContext : DbContext
+    public DbSet<Message> Messages { get; set; } = null!;
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        public DbSet<Message> Messages { get; set; }
-        public MessageDbContext(DbContextOptions options) : base(options)
+        modelBuilder.Entity<Message>(p =>
         {
-            
-        }
+            p.HasKey(e => e.Id);
+
+            p.Property(e => e.UserName);
+            p.Property(e => e.Text);
+            p.Property(e => e.SentAt);
+        });
     }
 }

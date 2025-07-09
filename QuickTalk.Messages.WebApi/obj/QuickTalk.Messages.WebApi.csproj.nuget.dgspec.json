@@ -34,11 +34,15 @@
             "projectReferences": {
               "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Domain\\QuickTalk.Messages.Domain.csproj": {
                 "projectPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Domain\\QuickTalk.Messages.Domain.csproj"
+              },
+              "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Persistence\\QuickTalk.Messages.Persistence.csproj": {
+                "projectPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Persistence\\QuickTalk.Messages.Persistence.csproj"
               }
             }
           }
         },
         "warningProperties": {
+          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]
@@ -48,7 +52,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -75,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -110,6 +114,7 @@
           }
         },
         "warningProperties": {
+          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]
@@ -119,7 +124,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -140,7 +145,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -179,6 +184,7 @@
           }
         },
         "warningProperties": {
+          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]
@@ -188,12 +194,16 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.6, )"
@@ -231,7 +241,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -266,6 +276,9 @@
               "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Application\\QuickTalk.Messages.Application.csproj": {
                 "projectPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Application\\QuickTalk.Messages.Application.csproj"
               },
+              "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Domain\\QuickTalk.Messages.Domain.csproj": {
+                "projectPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Domain\\QuickTalk.Messages.Domain.csproj"
+              },
               "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Persistence\\QuickTalk.Messages.Persistence.csproj": {
                 "projectPath": "C:\\Users\\Антон\\source\\repos\\QuickTalk\\QuickTalk.Messages.Persistence\\QuickTalk.Messages.Persistence.csproj"
               }
@@ -273,6 +286,7 @@
           }
         },
         "warningProperties": {
+          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]
@@ -282,7 +296,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -336,7 +350,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

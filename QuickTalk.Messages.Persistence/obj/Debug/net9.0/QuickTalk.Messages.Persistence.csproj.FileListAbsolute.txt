@@ -4,3 +4,15 @@ C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\De
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.AssemblyInfo.cs
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.csproj.CoreCompileInputs.cache
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.sourcelink.json
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\bin\Debug\net9.0\QuickTalk.Messages.Persistence.deps.json
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\bin\Debug\net9.0\QuickTalk.Messages.Persistence.runtimeconfig.json
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\bin\Debug\net9.0\QuickTalk.Messages.Persistence.dll
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\bin\Debug\net9.0\QuickTalk.Messages.Persistence.pdb
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\bin\Debug\net9.0\QuickTalk.Messages.Domain.dll
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\bin\Debug\net9.0\QuickTalk.Messages.Domain.pdb
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTal.AFFBED6B.Up2Date
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.dll
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\refint\QuickTalk.Messages.Persistence.dll
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.pdb
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\QuickTalk.Messages.Persistence.genruntimeconfig.cache
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.Persistence\obj\Debug\net9.0\ref\QuickTalk.Messages.Persistence.dll

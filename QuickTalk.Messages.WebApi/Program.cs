@@ -5,7 +5,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationDependencies();
 builder.Services.AddPersistenceDependencies(builder.Configuration);
 
-
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 

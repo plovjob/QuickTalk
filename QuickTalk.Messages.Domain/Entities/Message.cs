@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+namespace QuickTalk.Messages.Domain.Entities;
 
-namespace QuickTalk.Messages.Domain.Entities
+public class Message(string userName, string text, DateTime sentAt)
 {
-    public class Message
-    {
-        public Guid Id { get; set; }
-        public string UserName { get; set; }
-        public string Text { get; set; }
-        public string TimeOfSend { get; set; }
-    }
+    public Guid Id { get; } = Guid.NewGuid();
+    public string UserName { get; } = userName;
+    public string Text { get; } = text;
+    public DateTime SentAt { get; } = sentAt;
 }

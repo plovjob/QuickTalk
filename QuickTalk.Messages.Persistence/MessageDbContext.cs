@@ -3,10 +3,9 @@ using QuickTalk.Messages.Domain.Entities;
 
 namespace QuickTalk.Messages.Persistence;
 
-public class MessageDbContext(DbContextOptions options) : DbContext(options)
+public class MessageDbContext(DbContextOptions<MessageDbContext> options) : DbContext(options)
 {
     public DbSet<Message> Messages { get; set; } = null!;
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Message>(p =>

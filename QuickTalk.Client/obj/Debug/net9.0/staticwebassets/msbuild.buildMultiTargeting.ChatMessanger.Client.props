@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\ChatMessanger.Client.props" />
-</Project>

@@ -1042,7 +1042,7 @@
         },
         "runtime": {
           "QuickTalk.Messages.Application.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1050,7 +1050,7 @@
       "QuickTalk.Messages.Domain/1.0.0": {
         "runtime": {
           "QuickTalk.Messages.Domain.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1064,7 +1064,7 @@
         },
         "runtime": {
           "QuickTalk.Messages.Persistence.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

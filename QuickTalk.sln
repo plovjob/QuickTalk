@@ -27,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.Infrastr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.WebApi", "QuickTalk.Messages.WebApi\QuickTalk.Messages.WebApi.csproj", "{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages.Shared.Configuration", "Messages.Shared.Configuration\Messages.Shared.Configuration.csproj", "{F98DCE35-6CC2-40BB-8C04-52F79D369EB9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,10 +57,6 @@ Global
 		{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F98DCE35-6CC2-40BB-8C04-52F79D369EB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F98DCE35-6CC2-40BB-8C04-52F79D369EB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F98DCE35-6CC2-40BB-8C04-52F79D369EB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F98DCE35-6CC2-40BB-8C04-52F79D369EB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,7 +73,6 @@ Global
 		{D425D0D6-0F8E-4C59-80F2-BC338EE8A0A0} = {EE62D9DE-487D-4095-9319-CB530E7D9F6E}
 		{9C6CD286-CFA6-4C3B-8ED3-BBF484F9956F} = {EE62D9DE-487D-4095-9319-CB530E7D9F6E}
 		{3A92C47E-36C5-4D2D-81F2-7AE650007CF7} = {3B16BE39-4144-42BC-B3EF-74D8DFC71FCA}
-		{F98DCE35-6CC2-40BB-8C04-52F79D369EB9} = {0E9016CF-4BE0-46ED-9F37-4C67766B6743}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D7FE2A2-DA95-4E29-8F0E-DCB65CF75076}

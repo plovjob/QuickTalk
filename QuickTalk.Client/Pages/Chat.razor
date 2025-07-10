@@ -1,7 +1,9 @@
 @page "/chat"
-@using ChatMessanger.Client.Services
+@using QuickTalk.Client.Services
+@using Microsoft.Extensions.Options
 @inject NavigationManager NavigationManager
 @inject ApiMessageService ApiMessageService
+@inject IOptions<ApiBaseAddressConfiguration> Options
 
 <h3>Chat</h3>
 @if (IsConnected())
@@ -10,7 +12,7 @@
     <input type="text" @bind="message" />
     <input type="button" value="Send" @onclick="Send" />
 
-    <ul id="charRoom">
+    <ul id="chatRoom">
         @foreach (var message in messages)
         {
             <li>@message</li>
@@ -23,17 +25,19 @@ else
 }
 
 @code {
-    private HubConnection hubConnection;
+    private HubConnection? hubConnection;
     private List<string> messages = new List<string>();
-    private string userName;
-    private string message;
+    private string? userName;
+    private string? message;
 
     protected override async Task OnInitializedAsync()
     {
         hubConnection = new HubConnectionBuilder()
-        .WithUrl("https://localhost:7005/chathub")
+        .WithUrl($"{Options.Value.BaseAddress}/chathub")
         .Build();
 
+        //обработчик, который вызывается когда метод хаба с определенным методом вызыван
+        //первый параметр - это идентификатор для обработчика
         hubConnection.On<string, string>("ReceiveMessage", (userName, message) =>
         {
             var resultMsg = $"{userName}: {message}";
@@ -46,21 +50,29 @@ else
 
     async Task Send()
     {
+        if (hubConnection == null)
+            throw new ArgumentNullException();
+
+        //отправляет данные на сервер
         await hubConnection.SendAsync("SendMessage", userName, message);
-        var messageDto = new MessageDTO()
+        var content = new Content()
         {
-            UserName = userName,
-            Text = message,
-            TimeOfSend = DateTime.UtcNow
+            Message = new MessageDto
+            {
+                UserName = userName,
+                Text = message,
+            }
         };
 
-        await SaveMessage(messageDto);
+        await SaveMessage(content);
     }
 
-    async Task SaveMessage(MessageDTO messageDTO)
+    async Task SaveMessage(Content content)
     {
-        await ApiMessageService.SaveMessageAsync(messageDTO);
+        await ApiMessageService.SaveMessageAsync(content);
     }
-    
-    public bool IsConnected() => hubConnection.State == HubConnectionState.Connected;
+
+    public bool IsConnected() => hubConnection != null
+    ? hubConnection.State == HubConnectionState.Connected
+    : false;
 }

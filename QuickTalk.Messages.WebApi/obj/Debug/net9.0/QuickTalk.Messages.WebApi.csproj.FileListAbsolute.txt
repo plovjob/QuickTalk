@@ -1,10 +1,3 @@
-C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.csproj.AssemblyReference.cache
-C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.AssemblyInfoInputs.cache
-C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.AssemblyInfo.cs
-C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.csproj.CoreCompileInputs.cache
-C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.sourcelink.json
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\bin\Debug\net9.0\appsettings.json
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\bin\Debug\net9.0\QuickTalk.Messages.WebApi.staticwebassets.endpoints.json
@@ -155,6 +148,14 @@ C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\bin\Debug\n
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\bin\Debug\net9.0\QuickTalk.Messages.Application.pdb
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\bin\Debug\net9.0\QuickTalk.Messages.Domain.pdb
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\bin\Debug\net9.0\QuickTalk.Messages.Persistence.pdb
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.csproj.AssemblyReference.cache
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.AssemblyInfoInputs.cache
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.AssemblyInfo.cs
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.sourcelink.json
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\scopedcss\bundle\QuickTalk.Messages.WebApi.styles.css
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\staticwebassets.development.json
@@ -172,4 +173,3 @@ C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\n
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.pdb
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.genruntimeconfig.cache
 C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\ref\QuickTalk.Messages.WebApi.dll
-C:\Users\Антон\source\repos\QuickTalk\QuickTalk.Messages.WebApi\obj\Debug\net9.0\QuickTalk.Messages.WebApi.MvcApplicationPartsAssemblyInfo.cs

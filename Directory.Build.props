@@ -38,4 +38,10 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
     </ItemGroup>
+	
+	<ItemGroup Condition="'$(MSBuildProjectName)' == 'QuickTalk.Client'">
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.6" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.6" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.6" />
+    </ItemGroup>
 </Project>

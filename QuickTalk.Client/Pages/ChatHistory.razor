@@ -1,4 +1,4 @@
-﻿@page "/chatHistory"
+@page "/chatHistory"
 @inject ApiMessageService ApiMessageService
 <h3>Chat History</h3>
 @if(messages != null)
@@ -17,7 +17,6 @@
                 <tr>
                     <td>@message.UserName</td>
                     <td>@message.Text</td>
-                    <td>@message.TimeOfSend</td>
                 </tr>
             }
         </tbody>
@@ -28,7 +27,7 @@ else{
 }
 
 @code {
-    private List<MessageDTO> messages;
+    private List<MessageDto>? messages;
     protected override async Task OnInitializedAsync()
     {
         messages = await ApiMessageService.ShowMessageHistory();

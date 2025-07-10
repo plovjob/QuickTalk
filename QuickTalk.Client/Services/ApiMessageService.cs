@@ -1,16 +1,25 @@
 using QuickTalk.Client.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System.Net.Http.Json;
+using System.Text;
 
-namespace ChatMessanger.Client.Services;
+namespace QuickTalk.Client.Services;
 
 public class ApiMessageService(HttpClient httpClient)
 {
-    public async Task SaveMessageAsync(MessageDTO messageDTO)
+    JsonSerializerSettings jsonSerializerSettings = new()
+    {
+        ContractResolver = new DefaultContractResolver(),
+    };
+
+    public async Task SaveMessageAsync(Content content)
     {
         try
         {
-            var msgContent = JsonContent.Create(messageDTO);
-            await httpClient.PostAsync("https://localhost:7005/api/msgs/save", msgContent);
+            var messageJson = JsonConvert.SerializeObject(content, jsonSerializerSettings);
+            var messageJsonContent = new StringContent(messageJson, Encoding.UTF8, "application/json");
+            await httpClient.PostAsync($"{httpClient.BaseAddress}api/message/send", messageJsonContent);
         }
         catch (Exception e)
         {
@@ -18,14 +27,14 @@ public class ApiMessageService(HttpClient httpClient)
         }
     }
 
-    public async Task<List<MessageDTO>> ShowMessageHistory()
+    public async Task<List<MessageDto>?> ShowMessageHistory()
     {
         try
         {
-            var response = await httpClient.GetAsync("https://localhost:7005/api/msgs/showall");
+            var response = await httpClient.GetAsync($"{httpClient.BaseAddress}/api/message/get");
             if (response.IsSuccessStatusCode)
             {
-                return await response.Content.ReadFromJsonAsync<List<MessageDTO>>();
+                return await response.Content.ReadFromJsonAsync<List<MessageDto>>();
             }
         }
         catch (Exception e)
@@ -33,6 +42,6 @@ public class ApiMessageService(HttpClient httpClient)
             Console.WriteLine(e.Message);
         }
 
-        return new List<MessageDTO>();
+        return new List<MessageDto>();
     }
 }

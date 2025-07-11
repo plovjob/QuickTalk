@@ -4,7 +4,7 @@ using QuickTalk.Messages.Domain.Interfaces;
 
 namespace QuickTalk.Messages.Application.Commands.SendMessage;
 
-public class SendMessageAsyncCommandHandler(IMessageRepository messageRepository) : IRequestHandler<SendMessageAsyncCommand>
+public sealed class SendMessageAsyncCommandHandler(IMessageRepository messageRepository) : IRequestHandler<SendMessageAsyncCommand>
 {
     public async Task Handle(SendMessageAsyncCommand request, CancellationToken cancellationToken = default)
     {

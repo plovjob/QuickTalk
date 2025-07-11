@@ -1,6 +1,6 @@
 namespace QuickTalk.Client;
 
-public class ApiBaseAddressConfiguration
+internal sealed class ApiBaseAddressConfiguration
 {
     public string? BaseAddress { get; set; }
 }

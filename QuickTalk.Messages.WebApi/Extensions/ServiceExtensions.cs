@@ -5,15 +5,15 @@ using QuickTalk.Messages.Persistence.Repository;
 
 namespace QuickTalk.Messages.WebApi.Extensions;
 
-public static class ServiceExtensions
+internal static class ServiceExtensions
 {
-    public static void AddApplicationDependencies(this IServiceCollection services)
+    internal static void AddApplicationDependencies(this IServiceCollection services)
     {
         services.AddMediatR(conf => conf.RegisterServicesFromAssembly(
                                     typeof(Application.AssemblyReference).Assembly));
     }
 
-    public static void AddPersistenceDependencies(this IServiceCollection services, IConfiguration configuration)
+    internal static void AddPersistenceDependencies(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<MessageDbContext>(options
             => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),

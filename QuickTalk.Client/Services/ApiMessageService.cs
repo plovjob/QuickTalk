@@ -6,14 +6,14 @@ using System.Text;
 
 namespace QuickTalk.Client.Services;
 
-public class ApiMessageService(HttpClient httpClient)
+internal sealed class ApiMessageService(HttpClient httpClient)
 {
     JsonSerializerSettings jsonSerializerSettings = new()
     {
         ContractResolver = new DefaultContractResolver(),
     };
 
-    public async Task SaveMessageAsync(Content content)
+    internal async Task SendMessageAsync(Content content)
     {
         try
         {
@@ -27,11 +27,11 @@ public class ApiMessageService(HttpClient httpClient)
         }
     }
 
-    public async Task<List<MessageDto>?> ShowMessageHistory()
+    internal async Task<List<MessageDto>?> GetMessagesAsync()
     {
         try
         {
-            var response = await httpClient.GetAsync($"{httpClient.BaseAddress}/api/message/get");
+            var response = await httpClient.GetAsync($"{httpClient.BaseAddress}api/message/get");
             if (response.IsSuccessStatusCode)
             {
                 return await response.Content.ReadFromJsonAsync<List<MessageDto>>();

@@ -8,7 +8,7 @@
             <tr>
                 <th>User Name</th>
                 <th>Message Text</th>
-                <th>Time Of Send</th>
+                <th>Sent At</th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +17,8 @@
                 <tr>
                     <td>@message.UserName</td>
                     <td>@message.Text</td>
+                    <td>@message.SentAt</td>
+
                 </tr>
             }
         </tbody>
@@ -30,6 +32,6 @@ else{
     private List<MessageDto>? messages;
     protected override async Task OnInitializedAsync()
     {
-        messages = await ApiMessageService.ShowMessageHistory();
+        messages = await ApiMessageService.GetMessagesAsync();
     }
 }

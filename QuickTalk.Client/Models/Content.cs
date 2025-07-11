@@ -1,12 +1,13 @@
 namespace QuickTalk.Client.Models;
 
-public class Content
+internal sealed class Content(MessageDto message)
 {
-    public MessageDto? Message{ get; set; }
+    public MessageDto? Message { get; } = message;
 }
 
-public class MessageDto
+internal sealed class MessageDto(string? userName, string? text, DateTime? sentAt = null)
 {
-    public string? UserName { get; set; } = null!;
-    public string? Text { get; set; } = null!;
+    public string? UserName { get; } = userName ?? throw new ArgumentNullException();
+    public string? Text { get; } = text ?? throw new ArgumentNullException();
+    public DateTime? SentAt { get; } = sentAt;
 }

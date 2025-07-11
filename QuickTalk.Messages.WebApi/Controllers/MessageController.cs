@@ -7,7 +7,7 @@ namespace QuickTalk.Messages.WebApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class MessageController(ISender mediator) : ControllerBase
+internal class MessageController(ISender mediator) : ControllerBase
 {
     [HttpGet("Get")]
     public async Task<IActionResult> GetAllMessages()

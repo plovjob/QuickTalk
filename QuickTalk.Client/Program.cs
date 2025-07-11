@@ -8,7 +8,7 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
-string baseUrl = builder.Configuration.GetValue<string>("ApiSettings:BaseUrl") ?? "";
+var baseUrl = builder.Configuration.GetValue<string>("ApiSettings:BaseUrl") ?? "";
 builder.Services.Configure<ApiBaseAddressConfiguration>(e =>
 {
     e.BaseAddress = baseUrl;

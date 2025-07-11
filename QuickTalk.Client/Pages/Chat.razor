@@ -36,8 +36,6 @@ else
         .WithUrl($"{Options.Value.BaseAddress}/chathub")
         .Build();
 
-        //обработчик, который вызывается когда метод хаба с определенным методом вызыван
-        //первый параметр - это идентификатор для обработчика
         hubConnection.On<string, string>("ReceiveMessage", (userName, message) =>
         {
             var resultMsg = $"{userName}: {message}";
@@ -53,23 +51,15 @@ else
         if (hubConnection == null)
             throw new ArgumentNullException();
 
-        //отправляет данные на сервер
         await hubConnection.SendAsync("SendMessage", userName, message);
-        var content = new Content()
-        {
-            Message = new MessageDto
-            {
-                UserName = userName,
-                Text = message,
-            }
-        };
+        var content = new Content(new MessageDto(userName, message));
 
         await SaveMessage(content);
     }
 
     async Task SaveMessage(Content content)
     {
-        await ApiMessageService.SaveMessageAsync(content);
+        await ApiMessageService.SendMessageAsync(content);
     }
 
     public bool IsConnected() => hubConnection != null

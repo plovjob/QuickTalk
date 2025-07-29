@@ -3,14 +3,12 @@
     "Name": "default",
     "Projects": [
       {
-        "Path": "QuickTalk.Client\\QuickTalk.Client.csproj",
-        "Action": "Start",
-        "DebugTarget": "https"
+        "Path": "src\\Frontend\\QuickTalk.Client\\QuickTalk.Client.csproj",
+        "Action": "Start"
       },
       {
-        "Path": "QuickTalk.Messages.WebApi\\QuickTalk.Messages.WebApi.csproj",
-        "Action": "Start",
-        "DebugTarget": "https"
+        "Path": "src\\Messages\\Presentation\\QuickTalk.Messages.WebApi\\QuickTalk.Messages.WebApi.csproj",
+        "Action": "Start"
       }
     ]
   }

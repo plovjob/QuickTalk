@@ -3,29 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Client", "QuickTalk.Client\QuickTalk.Client.csproj", "{FB763408-C849-4E79-A9B7-2AE884F6DD81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Client", "src\Frontend\QuickTalk.Client\QuickTalk.Client.csproj", "{FB763408-C849-4E79-A9B7-2AE884F6DD81}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "src\Frontend", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messages", "Messages", "{0E9016CF-4BE0-46ED-9F37-4C67766B6743}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messages", "src\Messages", "{0E9016CF-4BE0-46ED-9F37-4C67766B6743}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{10CA19C1-5DC3-4088-B0E2-A7A8B3171F67}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E5EE81D8-72D7-4123-B433-7C988C9209B1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "src\Messages\Core", "{E5EE81D8-72D7-4123-B433-7C988C9209B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.Domain", "QuickTalk.Messages.Domain\QuickTalk.Messages.Domain.csproj", "{E657A5AD-AD95-4654-9019-16AEC9A513FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.Domain", "src\Messages\Core\QuickTalk.Messages.Domain\QuickTalk.Messages.Domain.csproj", "{E657A5AD-AD95-4654-9019-16AEC9A513FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.Application", "QuickTalk.Messages.Application\QuickTalk.Messages.Application.csproj", "{9B0BFAE2-86BE-4EE6-8CB8-C6886AB24217}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.Application", "src\Messages\Core\QuickTalk.Messages.Application\QuickTalk.Messages.Application.csproj", "{9B0BFAE2-86BE-4EE6-8CB8-C6886AB24217}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{EE62D9DE-487D-4095-9319-CB530E7D9F6E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "src\Messages\Infrastructure", "{EE62D9DE-487D-4095-9319-CB530E7D9F6E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{3B16BE39-4144-42BC-B3EF-74D8DFC71FCA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "src\Messages\Presentation", "{3B16BE39-4144-42BC-B3EF-74D8DFC71FCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.Persistence", "QuickTalk.Messages.Persistence\QuickTalk.Messages.Persistence.csproj", "{D425D0D6-0F8E-4C59-80F2-BC338EE8A0A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.Persistence", "src\Messages\Infrastructure\QuickTalk.Messages.Persistence\QuickTalk.Messages.Persistence.csproj", "{D425D0D6-0F8E-4C59-80F2-BC338EE8A0A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.Infrastructure", "QuickTalk.Messages.Infrastructure\QuickTalk.Messages.Infrastructure.csproj", "{9C6CD286-CFA6-4C3B-8ED3-BBF484F9956F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.Infrastructure", "src\Messages\Infrastructure\QuickTalk.Messages.Infrastructure\QuickTalk.Messages.Infrastructure.csproj", "{9C6CD286-CFA6-4C3B-8ED3-BBF484F9956F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.WebApi", "QuickTalk.Messages.WebApi\QuickTalk.Messages.WebApi.csproj", "{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Messages.WebApi", "src\Messages\Presentation\QuickTalk.Messages.WebApi\QuickTalk.Messages.WebApi.csproj", "{3A92C47E-36C5-4D2D-81F2-7AE650007CF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

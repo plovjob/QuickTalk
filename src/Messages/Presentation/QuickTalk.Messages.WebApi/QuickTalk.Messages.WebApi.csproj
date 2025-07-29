@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="Serilog.Expressions" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\QuickTalk.Messages.Application\QuickTalk.Messages.Application.csproj" />
+    <ProjectReference Include="..\..\Core\QuickTalk.Messages.Domain\QuickTalk.Messages.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\QuickTalk.Messages.Infrastructure\QuickTalk.Messages.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\QuickTalk.Messages.Persistence\QuickTalk.Messages.Persistence.csproj" />
+  </ItemGroup>
+</Project>

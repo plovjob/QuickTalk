@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\QuickTalk.Messages.Persistence\QuickTalk.Messages.Persistence.csproj" />
+    <ProjectReference Include="..\QuickTalk.Messages.Domain\QuickTalk.Messages.Domain.csproj" />
+  </ItemGroup>
+</Project>

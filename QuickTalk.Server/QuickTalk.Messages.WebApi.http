@@ -1,6 +1,0 @@
-@ChatMessanger.Server_HostAddress = http://localhost:5294
-
-GET {{ChatMessanger.Server_HostAddress}}/
-Accept: application/json
-
-###

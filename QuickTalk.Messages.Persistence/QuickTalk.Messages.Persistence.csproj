@@ -1,5 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <ProjectReference Include="..\QuickTalk.Messages.Domain\QuickTalk.Messages.Domain.csproj" />
-  </ItemGroup>
-</Project>

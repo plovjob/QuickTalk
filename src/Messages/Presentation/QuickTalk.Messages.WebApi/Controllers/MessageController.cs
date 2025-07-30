@@ -2,7 +2,6 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using QuickTalk.Messages.Application.Commands.SendMessage;
 using QuickTalk.Messages.Application.Queries.GetAllMessagesAsync;
-using QuickTalk.Messages.Domain.Dto;
 
 namespace QuickTalk.Messages.WebApi.Controllers;
 
@@ -23,9 +22,8 @@ public class MessageController(ISender mediator) : ControllerBase
     }
 
     [HttpPost("Send")]
-    public async Task<IActionResult> SendMessage([FromBody] MessageDto message)
+    public async Task<IActionResult> SendMessage([FromBody] SendMessageAsyncCommand command)
     {
-        var command = new SendMessageAsyncCommand(message);
         var result = await mediator.Send(command);
         if (result.IsSuccess)
         {

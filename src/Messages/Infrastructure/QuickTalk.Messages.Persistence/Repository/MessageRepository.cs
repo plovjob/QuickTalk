@@ -23,6 +23,8 @@ public sealed class MessageRepository(MessageDbContext messageDbContext) : IMess
                 .Failure(InternalError.ValueNotAdded(innerMessage));
         }
 
+        await messageDbContext.SaveChangesAsync();
+
         return OperationResult<MessageDto>.Success(messageDto);
     }
 

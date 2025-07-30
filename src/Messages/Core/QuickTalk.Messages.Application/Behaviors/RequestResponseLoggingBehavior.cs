@@ -8,7 +8,8 @@ namespace QuickTalk.Messages.Application.Behaviors;
 public class RequestResponseLoggingBehavior<TRequest, TResponse>(
     IHttpContextAccessor httpContext,
     ILogger<RequestResponseLoggingBehavior<TRequest, TResponse>> logger)
-    : IPipelineBehavior<TRequest, OperationResult<TResponse>> where TRequest : IRequest
+    : IPipelineBehavior<TRequest, OperationResult<TResponse>>
+    where TRequest: notnull, IRequest<OperationResult<TResponse>>
 {
     public async Task<OperationResult<TResponse>> Handle(
         TRequest request,

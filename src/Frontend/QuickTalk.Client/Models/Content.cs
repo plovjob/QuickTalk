@@ -6,3 +6,8 @@ internal sealed class MessageDto(string? userName, string? text, DateTime? sentA
     public string? Text { get; } = text ?? throw new ArgumentNullException();
     public DateTime? SentAt { get; } = sentAt;
 }
+
+internal sealed class Content(MessageDto message)
+{
+    public MessageDto Message { get; } = message;
+}

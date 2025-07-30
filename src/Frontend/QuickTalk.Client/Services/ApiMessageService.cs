@@ -13,11 +13,11 @@ internal sealed class ApiMessageService(HttpClient httpClient)
         ContractResolver = new DefaultContractResolver(),
     };
 
-    internal async Task SendMessageAsync(MessageDto message)
+    internal async Task SendMessageAsync(Content content)
     {
         try
         {
-            var messageJson = JsonConvert.SerializeObject(message, jsonSerializerSettings);
+            var messageJson = JsonConvert.SerializeObject(content, jsonSerializerSettings);
             var messageJsonContent = new StringContent(messageJson, Encoding.UTF8, "application/json");
             await httpClient.PostAsync($"{httpClient.BaseAddress}api/message/send", messageJsonContent);
         }

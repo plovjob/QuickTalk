@@ -52,14 +52,14 @@ else
             throw new ArgumentNullException();
 
         await hubConnection.SendAsync("SendMessageAsync", userName, message);
-        var content = new MessageDto(userName, message);
+        var content = new Content(new MessageDto(userName, message));
 
         await SaveMessage(content);
     }
 
-    async Task SaveMessage(MessageDto innerMessage)
+    async Task SaveMessage(Content content)
     {
-        await ApiMessageService.SendMessageAsync(innerMessage);
+        await ApiMessageService.SendMessageAsync(content);
     }
 
     public bool IsConnected() => hubConnection != null

@@ -3,10 +3,19 @@
     <RootNamespace>QuickTalk.Client</RootNamespace>
     <AssemblyName>QuickTalk.Client</AssemblyName>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MudBlazor" Version="8.10.0" />
+  </ItemGroup>
    
   <ItemGroup>
     <Content Update="wwwroot\appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+   
+  <ItemGroup>
+    <PackageReference Update="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.7" />
+    <PackageReference Update="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.7" />
+    <PackageReference Update="Microsoft.AspNetCore.SignalR.Client" Version="9.0.7" />
   </ItemGroup>
 </Project>

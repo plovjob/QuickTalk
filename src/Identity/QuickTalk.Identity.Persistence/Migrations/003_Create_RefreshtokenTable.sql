@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS RefreshToken(
+    UserId UUID NOT NULL PRIMARY KEY,
+    Token VARCHAR NOT NULL,
+    IssuedAt TIMESTAMPTZ NOT NULL,
+    ExpiresAt TIMESTAMPTZ NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES UsersInfo(Id) ON DELETE CASCADE);
+
+CREATE INDEX ix_RefreshToken_ExpiresAt ON RefreshToken (ExpiresAt);

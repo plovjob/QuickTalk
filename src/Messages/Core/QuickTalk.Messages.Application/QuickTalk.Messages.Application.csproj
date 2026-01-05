@@ -1,0 +1,6 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\QuickTalk.Messages.Persistence\QuickTalk.Messages.Persistence.csproj" />
+    <ProjectReference Include="..\QuickTalk.Messages.Domain\QuickTalk.Messages.Domain.csproj" />
+  </ItemGroup>
+</Project>

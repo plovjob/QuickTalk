@@ -1,0 +1,15 @@
+QuickTalk.Messages.Persistence\bin/
+QuickTalk.Messages.Persistence\obj/
+QuickTalk.Messages.WebApi\bin/
+QuickTalk.Messages.WebApi\obj/
+QuickTalk.Client\bin/
+QuickTalk.Client\obj/
+QuickTalk.Messages.Application\bin/
+QuickTalk.Messages.Application\obj/
+QuickTalk.Messages.Domain\bin/
+QuickTalk.Messages.Domain\obj/
+QuickTalk.Messages.Infrastructure\bin/
+QuickTalk.Messages.Infrastructure\obj/
+bin/
+obj/
+.vs/

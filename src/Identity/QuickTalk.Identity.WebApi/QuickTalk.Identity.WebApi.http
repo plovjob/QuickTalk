@@ -1,0 +1,6 @@
+@QuickTalk.Identity.WebApi_HostAddress = http://localhost:5097
+
+GET {{QuickTalk.Identity.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

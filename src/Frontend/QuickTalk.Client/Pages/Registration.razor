@@ -1,0 +1,92 @@
+@layout LoginLayout
+@using QuickTalk.Client.Authentication.Dto;
+@using Blazored.SessionStorage;
+@inject NavigationManager NavigationManager
+@inject IAuthenticationService AuthenticationService
+@inject UserAuthenticationStateProvider AuthenticationStateProvider
+@page "/registration"
+
+<MudPaper class="pa-4" Elevation="5">
+    <MudText Typo="Typo.h4">Registration</MudText>
+    <MudForm>
+        <MudGrid>
+            <MudItem xs="12">
+                <MudTextField @bind-Value="registrationRequest.Email"
+                T="string"
+                Label="Email"
+                Variant="Variant.Outlined"
+                Required="true"
+                Disabled="@IsDisabled" />
+                Email
+            </MudItem>
+
+            <MudItem xs="12">
+                <MudTextField @bind-Value="registrationRequest.UserName"
+                T="string"
+                Label="User Name"
+                Variant="Variant.Outlined"
+                Required="true"
+                Disabled="@IsDisabled" />
+                User Name
+            </MudItem>
+
+            <MudItem xs="12">
+                <MudTextField @bind-Value="registrationRequest.Password"
+                T="string"
+                Label="Password"
+                Variant="Variant.Outlined"
+                InputType="InputType.Password"
+                Required="true"
+                Disabled="@IsDisabled" />
+                Password
+            </MudItem>
+
+            <MudItem xs="12">
+                <MudButton Variant="Variant.Filled"
+                Color="Color.Primary"
+                Size="Size.Large"
+                FullWidth="true"
+                OnClick="SubmitRegistrationAsync">
+                    Register
+                </MudButton>
+            </MudItem>
+            <MudItem xs="12">
+                @if (expiration is not null)
+                {
+                    <MudText>You are logged in until @expiration.Value.ToLongTimeString() </MudText>
+                }
+                @if (errorMessage is not null)
+                {
+                    <MudText>@errorMessage</MudText>
+                }
+            </MudItem>
+        </MudGrid>
+    </MudForm>
+</MudPaper>
+
+@code {
+    private RegistrationRequest registrationRequest = new RegistrationRequest();
+    private DateTime? expiration;
+    private string? errorMessage;
+    private bool IsDisabled => expiration == null ? false : true;
+
+    private async Task SubmitRegistrationAsync()
+    {
+        try
+        {
+            var response = await AuthenticationService.RegisterAsync(registrationRequest);
+
+            errorMessage = null;
+
+            AuthenticationStateProvider.AuthenticateUser(response!.Token!.AccessToken);
+
+            NavigationManager.NavigateTo("/chat");
+        }
+        catch (Exception ex)
+        {
+            expiration = null;
+
+            errorMessage = ex.Message;
+        }
+    }
+}

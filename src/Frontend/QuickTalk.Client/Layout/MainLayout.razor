@@ -1,0 +1,31 @@
+@inherits LayoutComponentBase
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+<MudLayout>
+    <MudAppBar Elevation="0">
+        <MudToolBar>
+            <MudIconButton Icon="@Icons.Material.Outlined.Menu" Color="Color.Inherit" OnClick="@((e) => DrawerToggle())"/>
+        </MudToolBar>
+        <MudText Typo="Typo.h6" Class="ml-2">Blazor Chat</MudText>
+        <MudSpacer />
+        <LoginDisplay />
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
+        <NavMenu />
+    </MudDrawer>
+    <MudMainContent>
+
+        <MudContainer MaxWidth="MaxWidth.False" Class="mt-4">
+            @Body
+        </MudContainer>
+
+    </MudMainContent>
+</MudLayout>
+@code {
+    bool _drawerOpen = false;
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}

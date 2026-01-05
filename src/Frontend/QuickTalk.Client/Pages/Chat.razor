@@ -1,0 +1,102 @@
+@page "/chat"
+@using Blazored.SessionStorage
+@using QuickTalk.Client.Services
+@using Microsoft.Extensions.Options
+@inject NavigationManager NavigationManager
+@inject ChatManager ChatManager
+@inject ApiBaseAddressConfiguration ApiBaseAddressConfiguration
+@inject ISessionTokenStorage SessionStorage
+@inject ILogger<Chat> Logger;
+
+@if (IsConnected())
+{
+    <div class="d-flex flex-grow-1 flex-row">
+        <MudPaper Elevation="25" Class="py-4 flex-grow-1">
+            <MudToolBar Style="background-color: var(--mud-palette-primary-lighten); color: white;">
+                <MudIcon Icon="@Icons.Material.Outlined.Person" Style="margin-right:10px"></MudIcon>
+                <MudText Typo="Typo.h6">QuickTalk Chat</MudText>
+            </MudToolBar>
+            <div class="d-flex flex-column px-4" style="max-height:65vh;min-height:65vh; overflow:scroll;" id="chatContainer">
+                @foreach (var message in messages)
+                {
+                    <div class="d-flex flex-row my-4">
+                        <div>
+                            <MudText Typo="Typo.body1">@userName</MudText>
+                            <MudText Typo="Typo.body2" Style=" padding: 15px;background-color: var(--mud-palette-background-grey);border-radius: 5px;margin-top:5px">@message</MudText>
+                        </div>
+                    </div>
+                }
+            </div>
+            <MudPaper Elevation="25" Class="d-flex flex-row px-2 mx-4">
+                <MudTextField T="string" Placeholder="Enter your Username..." Underline="true" Class="mt-n2 mx-4"
+                              @bind-Value="userName" />
+                <MudTextField T="string" Placeholder="Enter your Message..." Underline="true" Class="mt-n2 mx-4"
+                              @bind-Value="message" />
+                <MudButton OnClick="Send" StartIcon="@Icons.Material.Outlined.Send" Color="Color.Secondary" ButtonType="ButtonType.Button">Send</MudButton>
+            </MudPaper>
+        </MudPaper>
+    </div>
+}
+else
+{
+    <p>Connecting....</p>
+}
+
+
+@code {
+
+    private HubConnection? hubConnection;
+    public bool IsConnected() => hubConnection != null
+                                ? hubConnection.State == HubConnectionState.Connected
+                                : false;
+
+    private List<string> messages = new List<string>();
+    private string? userName;
+    private string? message;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+
+            var token = await SessionStorage.GetAccessTokenAsync();
+
+            hubConnection = new HubConnectionBuilder()
+             .WithUrl($"{ApiBaseAddressConfiguration.MessagesWebApiUrl}/chathub", options =>
+             {
+                 options.AccessTokenProvider = () => Task.FromResult<string?>(token);
+             })
+             .Build();
+
+            hubConnection.On<string, string>("ReceiveMessage", (userName, message) =>
+            {
+                messages.Add(message);
+                StateHasChanged();
+            });
+
+            await hubConnection.StartAsync();
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex.Message);
+            Console.WriteLine(ex.Message);
+            throw;
+        }
+       
+    }
+
+    async Task Send()
+    {
+        if (hubConnection == null)
+            throw new ArgumentNullException();
+        var content = new MessageDto(Guid.NewGuid(), userName, message);
+        await SaveMessage(content);
+
+        await hubConnection.SendAsync("SendMessageAsync", userName, message);
+    }
+
+    async Task SaveMessage(MessageDto content)
+    {
+        await ChatManager.SendMessageAsync(content);
+    }
+}

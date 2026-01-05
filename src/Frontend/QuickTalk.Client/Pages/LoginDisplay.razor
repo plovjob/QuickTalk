@@ -1,0 +1,25 @@
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@inject NavigationManager Navigation
+
+<AuthorizeView>
+    <Authorized>
+        <div class="pa-4 justify-center my-4 mud-text-align-center">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/profile">Profile</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="BeginSignOut">Log Out</MudButton>
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        <div class="pa-4 justify-center my-4 mud-text-align-center">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/registration">Register</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Secondary" Href="/login">Log in</MudButton>
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code{
+    private void BeginSignOut(MouseEventArgs args)
+    {
+        Navigation.NavigateToLogout("/logout");
+    }
+}

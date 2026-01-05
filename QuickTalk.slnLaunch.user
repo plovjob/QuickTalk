@@ -1,0 +1,47 @@
+[
+  {
+    "Name": "default",
+    "Projects": [
+      {
+        "Path": "src\\Identity\\QuickTalk.Identity.WebApi\\QuickTalk.Identity.WebApi.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "src\\Frontend\\QuickTalk.Client\\QuickTalk.Client.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "src\\Messages\\Presentation\\QuickTalk.Messages.WebApi\\QuickTalk.Messages.WebApi.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  },
+  {
+    "Name": "ClientStart",
+    "Projects": [
+      {
+        "Path": "src\\Frontend\\QuickTalk.Client\\QuickTalk.Client.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  },
+  {
+    "Name": "Новый профиль",
+    "Projects": [
+      {
+        "Path": "src\\Messages\\Presentation\\QuickTalk.Messages.WebApi\\QuickTalk.Messages.WebApi.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "src\\Identity\\QuickTalk.Identity.WebApi\\QuickTalk.Identity.WebApi.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  }
+]

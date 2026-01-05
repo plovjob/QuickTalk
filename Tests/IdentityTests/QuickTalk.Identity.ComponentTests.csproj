@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.InMemory" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Identity\QuickTalk.Identity.Persistence\QuickTalk.Identity.Persistence.csproj" />
+    <ProjectReference Include="..\..\src\Identity\QuickTalk.Identity.WebApi\QuickTalk.Identity.WebApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+</Project>

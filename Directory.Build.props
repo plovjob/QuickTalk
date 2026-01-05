@@ -1,0 +1,114 @@
+<Project>
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(MSBuildProjectName)' == 'QuickTalk.Messages.Application'">
+        <PackageReference Include="MediatR" Version="13.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+    </ItemGroup>
+	
+	<ItemGroup Condition="'$(MSBuildProjectName)' == 'QuickTalk.Messages.Persistence'">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.8">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.8">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+		 <PackageReference Include="EFCore.NamingConventions" Version="9.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.8" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.8" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+    </ItemGroup>
+    
+    <ItemGroup Condition="'$(MSBuildProjectName)' == 'QuickTalk.Messages.WebApi'">
+        <PackageReference Include="MediatR" Version="13.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.11" />
+		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+		<PackageReference Include="Serilog.Expressions" Version="5.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.10" />
+
+		<PackageReference Include="OpenTelemetry" Version="1.14.0" />
+		<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.14.0" />
+		<PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.14.0" />
+
+		<PackageReference Include="MassTransit" Version="8.5.7" />
+		<PackageReference Include="MassTransit.RabbitMQ" Version="8.5.7" />
+		<PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+    </ItemGroup>
+
+	<ItemGroup Condition="'$(MSBuildProjectName)' == 'QuickTalk.Identity.WebApi'">
+		<PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.0" />
+    	<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+
+		<PackageReference Include="OpenTelemetry" Version="1.14.0" />
+		<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.14.0" />
+		<PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.14.0" />
+
+		<PackageReference Include="MassTransit" Version="8.5.7" />
+		<PackageReference Include="MassTransit.RabbitMQ" Version="8.5.7" />
+		<PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+    </ItemGroup>
+
+	
+	<ItemGroup Condition="'$(MSBuildProjectName)' == 'QuickTalk.Identity.Application'">
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
+    </ItemGroup>
+	
+	<ItemGroup Condition="'$(MSBuildProjectName)' == 'QuickTalk.Identity.Persistence'">
+		<PackageReference Include="Dapper" Version="2.1.66" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="9.0.9" />
+		<PackageReference Include="Npgsql" Version="9.0.3" />
+		<PackageReference Include="System.IO.Abstractions" Version="22.0.16" />
+    </ItemGroup>
+	
+	<ItemGroup Condition="'$(MSBuildProjectName)' == 'QuickTalk.Client'">
+		<PackageReference Include="Blazored.SessionStorage" Version="2.4.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="9.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.11" />
+		<PackageReference Include="MudBlazor" Version="8.14.0" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.11" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    </ItemGroup>	
+	
+	<ItemGroup Condition="'$(MSBuildProjectName)' == 'QuickTalk.Messages.ComponentTests'">
+		<PackageReference Include="FluentAssertions" Version="8.5.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.8" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+		<PackageReference Include="Moq" Version="4.20.72" />
+		<PackageReference Include="xunit" Version="2.9.2" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+    </ItemGroup>
+	
+	<ItemGroup Condition="'$(MSBuildProjectName)' == 'QuickTalk.Identity.ComponentTests'">
+		<PackageReference Include="coverlet.collector" Version="6.0.2" />
+		<PackageReference Include="FluentAssertions" Version="8.8.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.11" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+		<PackageReference Include="Respawn" Version="6.2.1" />
+		<PackageReference Include="Testcontainers" Version="4.8.1" />
+		<PackageReference Include="Testcontainers.PostgreSql" Version="4.8.1" />
+		<PackageReference Include="xunit" Version="2.9.2" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+    </ItemGroup>
+</Project>

@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\QuickTalk.Shared.Messaging\QuickTalk.Shared.Messaging.csproj" />
+    <ProjectReference Include="..\QuickTalk.Identity.Application\QuickTalk.Identity.Application.csproj" />
+    <ProjectReference Include="..\QuickTalk.Identity.Persistence\QuickTalk.Identity.Persistence.csproj" />
+  </ItemGroup>
+</Project>

@@ -40,6 +40,8 @@ builder.Services.AddScoped<AuthenticationStateProvider>(sp =>
     return scope.ServiceProvider.GetRequiredService<UserAuthenticationStateProvider>();
 });
 
+builder.Services.AddScoped<HubService>();
+
 builder.Services.AddSingleton<TestService>();
 builder.Services.AddAuthorizationCore();
 

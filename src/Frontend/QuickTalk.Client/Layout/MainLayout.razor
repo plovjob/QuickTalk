@@ -7,7 +7,7 @@
         <MudToolBar>
             <MudIconButton Icon="@Icons.Material.Outlined.Menu" Color="Color.Inherit" OnClick="@((e) => DrawerToggle())"/>
         </MudToolBar>
-        <MudText Typo="Typo.h6" Class="ml-2">Blazor Chat</MudText>
+        <MudText Typo="Typo.h6" Class="ml-2">QuickTalk chat</MudText>
         <MudSpacer />
         <LoginDisplay />
     </MudAppBar>
@@ -23,7 +23,8 @@
     </MudMainContent>
 </MudLayout>
 @code {
-    bool _drawerOpen = false;
+    private bool _drawerOpen = false;
+
     void DrawerToggle()
     {
         _drawerOpen = !_drawerOpen;

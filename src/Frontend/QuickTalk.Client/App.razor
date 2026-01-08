@@ -5,6 +5,18 @@
                 <Authorizing>
                     <text>Please wait, we are authorizing the user.</text>
                 </Authorizing>
+                <NotAuthorized>
+                    @if (context.User.Identity is null || !context.User.Identity.IsAuthenticated)
+                    {
+                        <LayoutView Layout="@typeof(LoginLayout)">
+                            <Registration/>
+                        </LayoutView>
+                    }
+                    else
+                    {
+                        <MudText Typo="Typo.h6">Unauthorized</MudText>
+                    }
+                </NotAuthorized>
             </AuthorizeRouteView>
         </Found>
         <NotFound>

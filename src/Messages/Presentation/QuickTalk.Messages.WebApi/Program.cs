@@ -62,7 +62,7 @@ public partial class Program
 
         builder.Services.AddMassTransit(x =>
         {
-            x.AddConsumer<PublisherService>();
+            x.AddConsumer<MessageConsumer>();
 
             x.UsingRabbitMq((context, config) =>
             {
@@ -74,23 +74,14 @@ public partial class Program
 
                 config.ReceiveEndpoint("hello-message-event", e =>
                 {
-                    e.Consumer<PublisherService>();
+                    e.ConfigureConsumer<MessageConsumer>(context);
                 });
             });
         });
 
-        builder.Services.AddOpenTelemetry()
-            .ConfigureResource(r => r.AddService("Message Service"))
-            .WithTracing(config =>
-            {
-                config.AddAspNetCoreInstrumentation()
-                .AddHttpClientInstrumentation()
-                .AddSource()
-                .AddOtlpExporter(options =>
-                {
-
-                });
-            });
+        //
+        builder.Services.AddSingleton<MessageHub>();
+        builder.Services.AddScoped<MessageConsumer>();
 
         var app = builder.Build();
 

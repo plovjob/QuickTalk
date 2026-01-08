@@ -7,14 +7,15 @@
 @inject ApiBaseAddressConfiguration ApiBaseAddressConfiguration
 @inject ISessionTokenStorage SessionStorage
 @inject ILogger<Chat> Logger;
+@inject HubService HubService
 
-@if (IsConnected())
+@if (HubService.IsConnected)
 {
     <div class="d-flex flex-grow-1 flex-row">
         <MudPaper Elevation="25" Class="py-4 flex-grow-1">
             <MudToolBar Style="background-color: var(--mud-palette-primary-lighten); color: white;">
                 <MudIcon Icon="@Icons.Material.Outlined.Person" Style="margin-right:10px"></MudIcon>
-                <MudText Typo="Typo.h6">QuickTalk Chat</MudText>
+                <MudText Typo="Typo.h6">@helloMessage</MudText>
             </MudToolBar>
             <div class="d-flex flex-column px-4" style="max-height:65vh;min-height:65vh; overflow:scroll;" id="chatContainer">
                 @foreach (var message in messages)
@@ -29,10 +30,10 @@
             </div>
             <MudPaper Elevation="25" Class="d-flex flex-row px-2 mx-4">
                 <MudTextField T="string" Placeholder="Enter your Username..." Underline="true" Class="mt-n2 mx-4"
-                              @bind-Value="userName" />
+                @bind-Value="userName" />
                 <MudTextField T="string" Placeholder="Enter your Message..." Underline="true" Class="mt-n2 mx-4"
-                              @bind-Value="message" />
-                <MudButton OnClick="Send" StartIcon="@Icons.Material.Outlined.Send" Color="Color.Secondary" ButtonType="ButtonType.Button">Send</MudButton>
+                @bind-Value="message" />
+                <MudButton OnClick="SendMessageAsync" StartIcon="@Icons.Material.Outlined.Send" Color="Color.Secondary" ButtonType="ButtonType.Button">Send</MudButton>
             </MudPaper>
         </MudPaper>
     </div>
@@ -45,57 +46,59 @@ else
 
 @code {
 
-    private HubConnection? hubConnection;
-    public bool IsConnected() => hubConnection != null
-                                ? hubConnection.State == HubConnectionState.Connected
-                                : false;
-
     private List<string> messages = new List<string>();
+    private string? helloMessage;
     private string? userName;
     private string? message;
+    private string connectionId = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
-        try
-        {
+        HubService.UserMessageReceived += OnMessageReceived;
+        HubService.HelloMessageReceived += OnHelloMessageReceived;
 
-            var token = await SessionStorage.GetAccessTokenAsync();
-
-            hubConnection = new HubConnectionBuilder()
-             .WithUrl($"{ApiBaseAddressConfiguration.MessagesWebApiUrl}/chathub", options =>
-             {
-                 options.AccessTokenProvider = () => Task.FromResult<string?>(token);
-             })
-             .Build();
-
-            hubConnection.On<string, string>("ReceiveMessage", (userName, message) =>
-            {
-                messages.Add(message);
-                StateHasChanged();
-            });
-
-            await hubConnection.StartAsync();
-        }
-        catch (Exception ex)
-        {
-            Logger.LogError(ex.Message);
-            Console.WriteLine(ex.Message);
-            throw;
-        }
-       
+        await ConnectAsync();
     }
 
-    async Task Send()
+    private async Task ConnectAsync()
     {
-        if (hubConnection == null)
+        await HubService.InitializeAsync();
+        connectionId = HubService!.Connection!.ConnectionId!;
+        StateHasChanged();
+        await NotifyAsync();
+    }
+
+    private async Task SendMessageAsync()
+    {
+        if (!HubService.IsConnected)
+        {
             throw new ArgumentNullException();
+        }
+
         var content = new MessageDto(Guid.NewGuid(), userName, message);
         await SaveMessage(content);
 
-        await hubConnection.SendAsync("SendMessageAsync", userName, message);
+        await HubService.SendMessageAsync(userName!, message!);
     }
 
-    async Task SaveMessage(MessageDto content)
+    private async Task NotifyAsync()
+    {
+        await HubService.NotifyAsync();
+    }
+
+    private void OnMessageReceived(string userName, string message)
+    {
+        messages.Add(message);
+        StateHasChanged();
+    }
+
+    private void OnHelloMessageReceived(string message)
+    {
+        helloMessage = message;
+        StateHasChanged();
+    }
+
+    private async Task SaveMessage(MessageDto content)
     {
         await ChatManager.SendMessageAsync(content);
     }

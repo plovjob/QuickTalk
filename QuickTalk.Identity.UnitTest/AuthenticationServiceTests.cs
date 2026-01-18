@@ -6,7 +6,7 @@ using QuickTalk.Identity.Application.Models;
 using QuickTalk.Identity.Application.Services;
 using QuickTalk.Identity.Domain.Entities;
 
-namespace QuickTalk.Identity.UnitTest;
+namespace QuickTalk.Identity.UnitTests;
 
 public class AuthenticationServiceTests
 {
@@ -65,7 +65,7 @@ public class AuthenticationServiceTests
         mockRefreshTokenService.Setup(s => s.UpdateRefreshTokenAsync(It.IsAny<RefreshToken>()).Result).Returns(Result.Success());
 
         //Act
-        var result = await authenticationService.SignInAsync(user.Email, "123");
+        var result = await authenticationService.SignInAsync(user.Email, password);
 
         //Assert
         var resultDataTokensPair = result.Data.Should().BeOfType<Token>().Subject;
@@ -87,7 +87,7 @@ public class AuthenticationServiceTests
 
         //Assert
         var resultData = result.Should().BeOfType<Result<Token?>>().Subject;
-        result.Data.Should().BeNull();
+        result.IsFailure.Should().Be(true);
         result.Error?.Should().NotBe(null);
         result.Error?.StatusCode.Should().Be(404);
     }
@@ -110,7 +110,6 @@ public class AuthenticationServiceTests
 
         //Act
         var result = await authenticationService.SignInAsync(login, userName);
-
         //Assert
         var resultData = result.Should().BeOfType<Result<Token?>>().Subject;
         resultData.IsFailure.Should().BeTrue();

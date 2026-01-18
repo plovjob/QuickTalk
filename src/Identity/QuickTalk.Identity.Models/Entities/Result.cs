@@ -60,6 +60,9 @@ public static class UserErrors
     public static readonly Error InvalidRefreshToken = new(
         "RefreshToken.InvalidToken", "refresh token invalid or expired", 400);
 
+    public static Error Unauthorized => new(
+       "Users.UserUnauthorized", $"The user is not authorized, the login or password is incorrect.", 401);
+
     public static Error UserNotFound(string email) => new(
         "Users.NotFoundByEmail", $"User with this email: {email} was not found", 404);
 

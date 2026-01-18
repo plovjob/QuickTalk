@@ -6,15 +6,14 @@ namespace QuickTalk.Messages.WebApi.Hubs;
 [Authorize]
 public sealed class MessageHub : Hub
 {
-    public event Func<Task>? NotifyHelloMessage;
+    public event Func<Task>? CanSendHelloMessage;
 
     public async Task SendMessageAsync(string user, string message) =>
         await Clients.All.SendAsync("ReceiveMessage", user, message);
 
-    //вызывается
-    public async Task NotifyAsync()
+    public async Task SendHelloMessageAsync()
     {
-        NotifyHelloMessage?.Invoke();
+        CanSendHelloMessage?.Invoke();
         await Task.CompletedTask;
     }
 }

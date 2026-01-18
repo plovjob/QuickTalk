@@ -65,7 +65,7 @@ else
         await HubService.InitializeAsync();
         connectionId = HubService!.Connection!.ConnectionId!;
         StateHasChanged();
-        await NotifyAsync();
+        await HubService.SendHelloMessageAsync();
     }
 
     private async Task SendMessageAsync()
@@ -79,11 +79,6 @@ else
         await SaveMessage(content);
 
         await HubService.SendMessageAsync(userName!, message!);
-    }
-
-    private async Task NotifyAsync()
-    {
-        await HubService.NotifyAsync();
     }
 
     private void OnMessageReceived(string userName, string message)

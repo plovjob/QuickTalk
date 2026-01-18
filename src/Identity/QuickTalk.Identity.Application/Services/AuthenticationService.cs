@@ -29,6 +29,11 @@ public class AuthenticationService(
             return Result<Token?>.Failure(searchExistingUserResult.Error!);
         }
 
+        if (searchExistingUserResult.Data is null)
+        {
+            return Result<Token?>.Failure(UserErrors.UserNotFound(login));
+        }
+
         var user = searchExistingUserResult.Data;
 
         var isPasswordVerified = passwordService.VerifyPassword(password, user!.PasswordHash, user!.PasswordSalt);

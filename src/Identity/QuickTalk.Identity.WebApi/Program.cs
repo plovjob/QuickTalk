@@ -1,6 +1,10 @@
 using Hangfire;
 using Hangfire.Redis.StackExchange;
 using MassTransit;
+using MassTransit.Logging;
+using Npgsql;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using QuickTalk.Identity.Application.Models;
 using QuickTalk.Identity.Application.Services;
 using QuickTalk.Identity.Persistence;
@@ -76,6 +80,17 @@ public partial class Program
                 });
             });
         });
+
+        builder.Services.AddOpenTelemetry()
+            .ConfigureResource(r => r.AddService("Identity Service"))
+            .WithTracing(config =>
+            {
+                config.AddAspNetCoreInstrumentation()
+                .AddHttpClientInstrumentation()
+                .AddNpgsql()
+                .AddSource(DiagnosticHeaders.DefaultListenerName)
+                .AddOtlpExporter();
+            });
 
         var app = builder.Build();
 

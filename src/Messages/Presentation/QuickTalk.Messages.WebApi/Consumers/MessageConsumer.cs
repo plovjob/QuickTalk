@@ -11,7 +11,7 @@ public class MessageConsumer(IHubContext<MessageHub> hubContext, MessageHub hub)
 
     public async Task Consume(ConsumeContext<IUserLoggedIn> context)
     {
-        hub.NotifyHelloMessage += OnSendHelloMessageAsync;
+        hub.CanSendHelloMessage += OnSendHelloMessageAsync;
         Message = context.Message.Message;
         await Task.CompletedTask;
     }

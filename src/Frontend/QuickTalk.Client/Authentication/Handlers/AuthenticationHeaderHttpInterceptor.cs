@@ -2,12 +2,11 @@ using System.Net;
 using System.Net.Http.Headers;
 using Polly;
 using QuickTalk.Client.Authentication.Interfaces;
-using QuickTalk.Client.Authentication.Services;
 
 namespace QuickTalk.Client.Authentication.Handlers;
 
 public class AuthenticationHeaderHttpInterceptor(
-    AuthenticationService authenticationService,
+    IAuthenticationService authenticationService,
     ISessionTokenStorage tokenStorage)
     : DelegatingHandler
 {

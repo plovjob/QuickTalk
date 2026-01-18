@@ -55,6 +55,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{62C19C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Shared.Messaging", "QuickTalk.Shared.Messaging\QuickTalk.Shared.Messaging.csproj", "{B0F74DAD-B4C1-4933-A75E-90BD91795B65}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityUnitTests", "IdentityUnitTests", "{643ECF2E-1F02-45A2-95F4-1B19171BE47C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTalk.Identity.UnitTest", "QuickTalk.Identity.UnitTest\QuickTalk.Identity.UnitTest.csproj", "{A5B0A575-D08C-4942-A735-FEB4850D3DE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +113,10 @@ Global
 		{B0F74DAD-B4C1-4933-A75E-90BD91795B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0F74DAD-B4C1-4933-A75E-90BD91795B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0F74DAD-B4C1-4933-A75E-90BD91795B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5B0A575-D08C-4942-A735-FEB4850D3DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5B0A575-D08C-4942-A735-FEB4850D3DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5B0A575-D08C-4942-A735-FEB4850D3DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5B0A575-D08C-4942-A735-FEB4850D3DE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,6 +147,8 @@ Global
 		{42B91641-CAF3-49CA-AC2F-9C0E1B7EC13B} = {FC0EE468-841B-49ED-AE0B-3A0082F3A515}
 		{62C19CE3-5F29-447D-BF4F-CD92943AF0F2} = {10CA19C1-5DC3-4088-B0E2-A7A8B3171F67}
 		{B0F74DAD-B4C1-4933-A75E-90BD91795B65} = {62C19CE3-5F29-447D-BF4F-CD92943AF0F2}
+		{643ECF2E-1F02-45A2-95F4-1B19171BE47C} = {FC0EE468-841B-49ED-AE0B-3A0082F3A515}
+		{A5B0A575-D08C-4942-A735-FEB4850D3DE5} = {643ECF2E-1F02-45A2-95F4-1B19171BE47C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D7FE2A2-DA95-4E29-8F0E-DCB65CF75076}

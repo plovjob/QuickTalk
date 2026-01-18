@@ -49,7 +49,7 @@ public static class UserErrors
         "Users.EmailAlreadyRegistered", "User with this email already exists", 409);
 
     public static readonly Error InvalidLogin = new(
-        "Users.InvalidAccountDetails", "Error while trying to log in. Invalid login or password", 400);
+        "Users.InvalidAccountDetails", "Error while trying to log in. Invalid login or password", 401);
 
     public static readonly Error InvalidJwtToken = new(
         "JwtToken.InvalidToken", "JWT Access token is not valid", 400);

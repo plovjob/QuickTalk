@@ -1,4 +1,3 @@
-using System.Collections.Concurrent;
 using Microsoft.AspNetCore.SignalR.Client;
 using QuickTalk.Client.Authentication.Interfaces;
 
@@ -11,8 +10,6 @@ public class HubService(
 {
     public HubConnection Connection { get; private set; } = null!;
     public bool IsConnected => Connection?.State == HubConnectionState.Connected;
-
-    private readonly ConcurrentQueue<string> _messageQueue = new();
 
     public event Action<string, string>? UserMessageReceived;
     public event Action<string>? HelloMessageReceived;
@@ -42,6 +39,11 @@ public class HubService(
              })
              .Build();
 
+            Connection.On<string, string>("ReceiveMessage", (userName, message) =>
+            {
+                UserMessageReceived?.Invoke(userName, message);
+            });
+
             Connection.On<string>("ReceiveHelloMessage", (helloMessage) =>
             {
                 logger.LogInformation($"Получено приветственное сообщение: {helloMessage}");
@@ -60,54 +62,19 @@ public class HubService(
         }
     }
 
-    private void SetupEventHandlers()
-    {
-        Connection.On<string, string>("ReceiveMessage", (userName, message) =>
-        {
-            logger.LogInformation($"Получено сообщение от пользователя: {message}");
-            UserMessageReceived?.Invoke(userName, message);
-        });
-
-        Connection.On<string>("ReceiveHelloMessage", (helloMessage) =>
-        {
-            logger.LogInformation($"Получено приветственное сообщение: {helloMessage}");
-            HelloMessageReceived?.Invoke(helloMessage);
-        });
-
-        Connection.Reconnected += connectionId =>
-        {
-            logger.LogInformation("Переподключение успешно. Новый ConnectionId: {ConnectionId}",
-                connectionId);
-            return Task.CompletedTask;
-        };
-
-        Connection.Closed += error =>
-        {
-            logger.LogError(error, "Соединение закрыто");
-            return Task.CompletedTask;
-        };
-    }
-
-    //методы для отправки сообщений на сервер
     public async Task SendMessageAsync(string userName, string message)
     {
-        if (!IsConnected)
-        {
-            throw new InvalidOperationException("Нет подключения");
-        }
-
-        //я это отправляю на сервер чтобы у меня отработал обработчик на клиенте
         await Connection.SendAsync("SendMessageAsync", userName, message);
     }
 
-    public async Task NotifyAsync()
+    public async Task SendHelloMessageAsync()
     {
         if (!IsConnected)
         {
             throw new InvalidOperationException("Нет подключения");
         }
 
-        await Connection.SendAsync("NotifyAsync");
+        await Connection.SendAsync("SendHelloMessageAsync");
     }
 
     public async Task DisconnectAsync()

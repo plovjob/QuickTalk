@@ -1,5 +1,7 @@
 using System.Globalization;
 using MassTransit;
+using MassTransit.Logging;
+using Npgsql;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using QuickTalk.Messages.Domain.Entities;
@@ -79,7 +81,17 @@ public partial class Program
             });
         });
 
-        //
+        builder.Services.AddOpenTelemetry()
+            .ConfigureResource(r => r.AddService("Message Service"))
+            .WithTracing(config =>
+            {
+                config.AddAspNetCoreInstrumentation()
+                .AddHttpClientInstrumentation()
+                .AddNpgsql()
+                .AddSource(DiagnosticHeaders.DefaultListenerName)
+                .AddOtlpExporter();
+            });
+
         builder.Services.AddSingleton<MessageHub>();
         builder.Services.AddScoped<MessageConsumer>();
 

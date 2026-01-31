@@ -5,10 +5,15 @@ namespace QuickTalk.Messages.WebApi.Dto;
 public class MessageInputModel
 {
     [Required]
-    public Guid Id { get; set; }
+    public Guid MessageId { get; set; }
 
-    [Required(AllowEmptyStrings = false)]
-    [DisplayFormat(ConvertEmptyStringToNull = false)]
+    [Required]
+    public Guid FromUserId { get; set; }
+
+    [Required]
+    public Guid ToUserId { get; set; }
+
+    [Required]
     public string UserName { get; set; } = null!;
 
     [Required(AllowEmptyStrings = false)]

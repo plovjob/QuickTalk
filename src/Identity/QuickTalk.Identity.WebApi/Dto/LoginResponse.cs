@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace QuickTalk.Identity.WebApi.Dto;
 
-public class LoginRequest
+public class LoginResponse
 {
     [Required(AllowEmptyStrings = false)]
     [DisplayFormat(ConvertEmptyStringToNull = false)]

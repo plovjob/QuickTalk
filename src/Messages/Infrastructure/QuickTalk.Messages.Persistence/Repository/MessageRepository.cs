@@ -4,29 +4,62 @@ using QuickTalk.Messages.Domain.Interfaces;
 
 namespace QuickTalk.Messages.Persistence.Repository;
 
-public sealed class MessageRepository(MessageDbContext messageDbContext) : IMessageRepository
+public sealed class MessageRepository(MessageDbContext context) : IMessageRepository
 {
-    public async Task<Message?> GetMessageByIdAsync(Guid id)
+    public async Task<OperationResult> CreateNewUserAsync(MessangerUser user)
     {
-        return await messageDbContext.Messages.AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
-    }
+        var isUserExists = await context.Users
+            .AsNoTracking()
+            .AnyAsync(u => u.Id == user.Id && u.UserName == user.UserName);
 
-    public async Task<OperationResult> CreateAsync(Message message)
-    {
-        var addedMessage = await messageDbContext.Messages.AddAsync(message);
-
-        if (addedMessage == null)
+        if (isUserExists)
         {
-            return OperationResult.Failure(InternalError.ValueNotAdded("Message not added to database"));
+            return OperationResult.Failure(InternalError.UserAlreadyExists($"User with name: {user.UserName} already exists"));
         }
 
-        await messageDbContext.SaveChangesAsync();
+        await context.Users.AddAsync(user);
+        await context.SaveChangesAsync();
+        return OperationResult.Success();
+    }
+
+    public async Task<OperationResult<IReadOnlyCollection<Message>>> GetUserMessagesAsync(Guid senderId, Guid consumerId)
+    {
+        var existingUser = await context.Users.FirstOrDefaultAsync(u => u.Id == consumerId);
+
+        if (existingUser is null)
+        {
+            return OperationResult.Failure<IReadOnlyCollection<Message>>(InternalError.UserAlreadyExists($"User with Id: {consumerId} does not exists"));
+        }
+
+        var messages = existingUser.MessagesFromUsers!
+            .Concat(existingUser.MessagesToUsers!)
+            .OrderBy(m => m.SentAt)
+            .ToList()
+            .AsReadOnly();
+
+        return OperationResult.Success<IReadOnlyCollection<Message>>(messages);
+    }
+
+    public async Task<OperationResult> SaveUserMessageAsync(Message message)
+    {
+        var existingUser = await context.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Id == message.ToUserId);
+
+        if (existingUser is null)
+        {
+            return OperationResult.Failure(InternalError.UserDoesNotExists($"User with Id: {message.ToUserId} does not exists"));
+        }
+
+        await context.Messages.AddAsync(message);
+        await context.SaveChangesAsync();
+
         return OperationResult.Success();
     }
 
     public async Task<OperationResult> UpdateAsync(Message message)
     {
-        var messageEntity = await messageDbContext.Messages.FindAsync(message.Id);
+        var messageEntity = await context.Messages.FindAsync(message.Id);
 
         if (messageEntity == null)
         {
@@ -40,21 +73,7 @@ public sealed class MessageRepository(MessageDbContext messageDbContext) : IMess
 
         messageEntity.UpdateText(message.Text);
 
-        await messageDbContext.SaveChangesAsync();
+        await context.SaveChangesAsync();
         return OperationResult.Success(message);
-    }
-
-    public async Task<OperationResult<IReadOnlyCollection<Message>>> ListAsync()
-    {
-        var messages = await messageDbContext.Messages.AsNoTracking().ToListAsync();
-
-        if (messages == null)
-        {
-            return OperationResult.Failure<IReadOnlyCollection<Message>>(InternalError.CollectionDoesNotExists("Collection does not exists"));
-        }
-
-        var readOnlyMessage = messages.AsReadOnly();
-
-        return OperationResult.Success<IReadOnlyCollection<Message>>(readOnlyMessage);
     }
 }

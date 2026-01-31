@@ -5,11 +5,11 @@ using QuickTalk.Shared.Messaging;
 
 namespace QuickTalk.Messages.WebApi.Consumers;
 
-public class MessageConsumer(IHubContext<MessageHub> hubContext, MessageHub hub) : IConsumer<IUserLoggedIn>
+public class HelloMessageConsumer(IHubContext<MessageHub> hubContext, MessageHub hub) : IConsumer<IUserHelloMessage>
 {
     public string? Message { get; set; }
 
-    public async Task Consume(ConsumeContext<IUserLoggedIn> context)
+    public async Task Consume(ConsumeContext<IUserHelloMessage> context)
     {
         hub.CanSendHelloMessage += OnSendHelloMessageAsync;
         Message = context.Message.Message;

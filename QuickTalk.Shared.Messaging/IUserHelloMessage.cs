@@ -1,6 +1,6 @@
 namespace QuickTalk.Shared.Messaging;
 
-public interface IUserLoggedIn
+public interface IUserHelloMessage
 {
     public string Message { get; }
 }

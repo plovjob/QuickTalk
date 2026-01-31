@@ -13,12 +13,12 @@ internal sealed class ChatManager(IHttpClientFactory factory, ILogger<ChatManage
         ContractResolver = new DefaultContractResolver(),
     };
 
-    public async Task SendMessageAsync(MessageDto content)
+    public async Task SendMessageAsync(MessageDto messageDto)
     {
         try
         {
             var client = factory.CreateClient("WebApi");
-            var response = await client.PutAsync("api/messages", JsonContent.Create(content));
+            var response = await client.PutAsync("api/messages", JsonContent.Create(messageDto));
             response.EnsureSuccessStatusCode();
         }
         catch (Exception e)

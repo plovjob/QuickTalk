@@ -1,14 +1,12 @@
 namespace QuickTalk.Messages.Domain.Entities;
 
-public sealed class Message(Guid id, string userName, string text)
+public sealed class Message(Guid id, string text)
 {
     private DateTime? _sentAt = null;
 
     public Guid Id { get; private set; } = id;
-    public string UserName { get; private set; } = userName;
+
     public string Text { get; private set; } = text;
-    public Guid FromUserId { get; set; }
-    public Guid ToUserId { get; set; }
 
     public DateTime? SentAt
     {
@@ -30,6 +28,10 @@ public sealed class Message(Guid id, string userName, string text)
     }
 
     public DateTime? EditedAt { get; private set; } = null;
+    public Guid FromUserId { get; private set; }
+    public Guid ToUserId { get; private set; }
+    public MessangerUser? FromUser { get; set; }
+    public MessangerUser? ToUser { get; set; }
 
     public void UpdateText(string text) => Text = text;
 

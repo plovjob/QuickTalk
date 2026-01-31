@@ -26,14 +26,19 @@ public class AccountController(
             return ToProblemResponse(signUpResult.Error);
         }
 
-        await publishEndpoint.Publish<IUserLoggedIn>(new {Message = $"Hello, {request.Email}"});
+        await publishEndpoint.Publish<IUserHelloMessage>(new {Message = $"Hello, {request.Email}"});
 
-        return Ok(new AuthenticationResponse { Token = signUpResult!.Data! });
+        return Ok(new AuthenticationResponse
+        {
+            Token = signUpResult!.Data!.Token,
+            UserId = signUpResult.Data.UserId,
+            UserName = signUpResult.Data.UserName
+        });
     }
 
     [AllowAnonymous]
     [HttpPost("signin")]
-    public async Task<IActionResult> SignIn([FromBody] LoginRequest request)
+    public async Task<IActionResult> SignIn([FromBody] LoginResponse request)
     {
         var signInResult = await authenticationService.SignInAsync(request.Email, request.Password);
 
@@ -42,7 +47,7 @@ public class AccountController(
             return ToProblemResponse(signInResult.Error);
         }
 
-        await publishEndpoint.Publish<IUserLoggedIn>(new { Message = $"Hello, {request.Email}" });
+        await publishEndpoint.Publish<IUserHelloMessage>(new { Message = $"Hello, {request.Email}" });
 
         return Ok(new AuthenticationResponse { Token = signInResult!.Data! });
     }

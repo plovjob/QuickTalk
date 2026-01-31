@@ -1,8 +1,6 @@
-using QuickTalk.Identity.Domain.Entities;
+namespace QuickTalk.Identity.Domain.Entities;
 
-namespace QuickTalk.Identity.WebApi.Dto;
-
-public class AuthenticationResponse
+public class SignUpResponse
 {
     public Token Token { get; set; } = null!;
     public Guid UserId { get; set; }

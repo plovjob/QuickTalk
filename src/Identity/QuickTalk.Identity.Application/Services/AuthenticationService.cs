@@ -1,8 +1,10 @@
 using System.Globalization;
 using System.Security.Claims;
+using MassTransit;
 using QuickTalk.Identity.Application.Interfaces;
 using QuickTalk.Identity.Application.Models;
 using QuickTalk.Identity.Domain.Entities;
+using QuickTalk.Shared.Messaging;
 
 namespace QuickTalk.Identity.Application.Services;
 
@@ -12,7 +14,8 @@ public class AuthenticationService(
     JwtConfig jwtConfig,
     TimeProvider timeProvider,
     IPasswordService passwordService,
-    IRefreshTokenService refreshTokenService) : IAuthenticationService
+    IRefreshTokenService refreshTokenService,
+    IPublishEndpoint publishEndpoint) : IAuthenticationService
 {
     public async Task<Result<Token?>> SignInAsync(string login, string password)
     {
@@ -62,12 +65,12 @@ public class AuthenticationService(
         return Result<Token?>.Success(tokenObject);
     }
 
-    public async Task<Result<Token?>> SignUpAsync(string login, string userName, string password)
+    public async Task<Result<SignUpResponse?>> SignUpAsync(string login, string userName, string password)
     {
         if (string.IsNullOrWhiteSpace(login) ||
           string.IsNullOrWhiteSpace(password))
         {
-            return Result<Token?>.Failure(UserErrors.InvalidLogin);
+            return Result<SignUpResponse?>.Failure(UserErrors.InvalidLogin);
         }
 
         var user = userService.CreateUser(login, userName, password);
@@ -80,7 +83,7 @@ public class AuthenticationService(
 
         if (userDataSavingResult.IsFailure)
         {
-            return Result<Token?>.Failure(userDataSavingResult.Error!);
+            return Result<SignUpResponse?>.Failure(userDataSavingResult.Error!);
         }
 
         var identityToken = new Token(
@@ -88,7 +91,10 @@ public class AuthenticationService(
             refreshToken.Token,
             tokenService.GetTokenExpiration(accessToken));
 
-        return Result<Token?>.Success(identityToken);
+        //вызывает событие, которое создаст соответствующего пользователя в MessagesApi
+        await publishEndpoint.Publish<IUserRegistered>(new { Id = user.Id, UserName = user.UserName });
+
+        return Result<SignUpResponse?>.Success(new() { Token = identityToken, UserId = user.Id, UserName = user.UserName});
     }
 
     public async Task<Result<Token?>> RefreshTokenAsync(string refreshToken)

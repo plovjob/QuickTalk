@@ -26,7 +26,7 @@ public class AuthenticationService(
             throw new InvalidDataException();
         }
 
-        await tokenStorage.SetTokensAsync(content.Token!.AccessToken, content.Token!.RefreshToken);
+        //await tokenStorage.SetTokensAsync(content.Token!.AccessToken, content.Token!.RefreshToken);
 
         return content;
     }
@@ -52,7 +52,7 @@ public class AuthenticationService(
             throw new InvalidDataException();
         }
 
-        await tokenStorage.SetTokensAsync(content.Token!.AccessToken, content.Token!.RefreshToken);
+        await tokenStorage.SetUserSensitiveInfoAsync(content.UserId, content.UserName, content.Token!.AccessToken, content.Token!.RefreshToken);
 
         return content;
     }

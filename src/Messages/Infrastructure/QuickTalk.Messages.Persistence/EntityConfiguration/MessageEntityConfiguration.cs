@@ -9,7 +9,6 @@ class MessageEntityConfiguration : IEntityTypeConfiguration<Message>
     public void Configure(EntityTypeBuilder<Message> builder)
     {
         builder.HasKey(e => e.Id);
-        builder.Property(e => e.UserName);
         builder.Property(e => e.Text);
         builder.Property(e => e.SentAt)
         .HasConversion

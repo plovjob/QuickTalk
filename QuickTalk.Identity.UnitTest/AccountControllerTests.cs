@@ -37,7 +37,7 @@ public class AccountControllerTests
     public async Task SignIn_When_UserFound_AndCorrectPassword_Returns_OkObjectResult_WithTokensPairValue()
     {
         //Arrange
-        var loginRequest = new LoginRequest() { Email = "@Example", Password = "password" };
+        var loginRequest = new LoginResponse() { Email = "@Example", Password = "password" };
         var tokenResponse = new Token(AccessToken: "AccessToken", RefreshToken: "RefreshToken", ExpirationTime: mockTimeProvider.Object.GetUtcNow().DateTime);
         var authenticationResponse = new AuthenticationResponse() { Token = tokenResponse };
 
@@ -52,14 +52,14 @@ public class AccountControllerTests
         actionResult.Value.Should().NotBeNull();
         actionResult.Value.Should().BeOfType<AuthenticationResponse>().Which.Should().BeEquivalentTo(authenticationResponse);
 
-        mockPublishEndpoint.Verify(x => x.Publish<IUserLoggedIn>(It.IsAny<object>(), default), Times.Once);
+        mockPublishEndpoint.Verify(x => x.Publish<IUserHelloMessage>(It.IsAny<object>(), default), Times.Once);
     }
 
     [Fact]
     public async Task SignIn_When_UserNotFound_Returns_ProblemDetails_With_NotFoundStatusCode_EventIsNotCalled()
     {
         //Arrange
-        var loginRequest = new LoginRequest() { Email = "@Example", Password = "password" };
+        var loginRequest = new LoginResponse() { Email = "@Example", Password = "password" };
 
         mockAuthenticationService.Setup(s => s.SignInAsync(loginRequest.Email, loginRequest.Password).Result).Returns(Result<Token?>.Failure(UserErrors.UserNotFound(loginRequest.Email)));
 
@@ -70,14 +70,14 @@ public class AccountControllerTests
         var problemResult = signInResult.Should().BeAssignableTo<ObjectResult>().Subject.Value.Should().BeAssignableTo<ProblemDetails>().Subject;
         problemResult.Status.Should().Be(404);
 
-        mockPublishEndpoint.Verify(x => x.Publish<IUserLoggedIn>(It.IsAny<object>(), default), Times.Never);
+        mockPublishEndpoint.Verify(x => x.Publish<IUserHelloMessage>(It.IsAny<object>(), default), Times.Never);
     }
 
     [Fact]
     public async Task SignIn_When_InvalidPassword_Returns_ProblemDetails_With_UnAuthorizedStatusCode_EventIsNotCalled()
     {
         //Arrange
-        var loginRequest = new LoginRequest() { Email = "@Example", Password = "password" };
+        var loginRequest = new LoginResponse() { Email = "@Example", Password = "password" };
 
         mockAuthenticationService.Setup(s => s.SignInAsync(loginRequest.Email, loginRequest.Password).Result).Returns(Result<Token?>.Failure(UserErrors.Unauthorized));
 
@@ -88,6 +88,6 @@ public class AccountControllerTests
         var problemResult = signInResult.Should().BeAssignableTo<ObjectResult>().Subject.Value.Should().BeAssignableTo<ProblemDetails>().Subject;
         problemResult.Status.Should().Be(401);
 
-        mockPublishEndpoint.Verify(x => x.Publish<IUserLoggedIn>(It.IsAny<object>(), default), Times.Never);
+        mockPublishEndpoint.Verify(x => x.Publish<IUserHelloMessage>(It.IsAny<object>(), default), Times.Never);
     }
 }

@@ -9,6 +9,8 @@ public class SendMessageAsyncCommandHandler(IMessageRepository messageRepository
     public async Task<OperationResult> Handle(SendMessageAsyncCommand request, CancellationToken cancellationToken = default)
     {
         var message = request.Message;
+        var user = request.User;
+
         var existingMessage = await messageRepository.GetMessageByIdAsync(message.Id);
 
         if (existingMessage != null)
@@ -19,6 +21,6 @@ public class SendMessageAsyncCommandHandler(IMessageRepository messageRepository
 
         var time = timeProvider.GetUtcNow().UtcDateTime;
         message.SetSentAt(time);
-        return await messageRepository.CreateAsync(message);
+        return await messageRepository.CreateNewUser(message);
     }
 }

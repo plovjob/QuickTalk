@@ -11,6 +11,6 @@ public sealed class GetAllMessagesAsyncRequestHandler(IMessageRepository message
         GetAllMessagesAsyncRequest request,
         CancellationToken cancellationToken = default)
     {
-        return await messageRepository.ListAsync();
+        return await messageRepository.GetSpecifiedUserIncomeMessages();
     }
 }

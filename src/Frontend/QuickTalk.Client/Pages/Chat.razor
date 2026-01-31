@@ -48,7 +48,6 @@ else
 
     private List<string> messages = new List<string>();
     private string? helloMessage;
-    private string? userName;
     private string? message;
     private string connectionId = string.Empty;
 
@@ -75,8 +74,11 @@ else
             throw new ArgumentNullException();
         }
 
-        var content = new MessageDto(Guid.NewGuid(), userName, message);
-        await SaveMessage(content);
+        var currentUserId = SessionStorage.GetCurrentUserIdAsync().Result;
+        var userName = SessionStorage.GetCurrentUserNameAsync().Result;
+        var messageDto = new MessageDto(Guid.NewGuid(), currentUserId, Guid.NewGuid(), userName, message);
+
+        await SaveMessage(messageDto);
 
         await HubService.SendMessageAsync(userName!, message!);
     }

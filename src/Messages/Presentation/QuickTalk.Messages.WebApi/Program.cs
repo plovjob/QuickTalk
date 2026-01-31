@@ -64,7 +64,7 @@ public partial class Program
 
         builder.Services.AddMassTransit(x =>
         {
-            x.AddConsumer<MessageConsumer>();
+            x.AddConsumer<HelloMessageConsumer>();
 
             x.UsingRabbitMq((context, config) =>
             {
@@ -76,7 +76,7 @@ public partial class Program
 
                 config.ReceiveEndpoint("hello-message-event", e =>
                 {
-                    e.ConfigureConsumer<MessageConsumer>(context);
+                    e.ConfigureConsumer<HelloMessageConsumer>(context);
                 });
             });
         });
@@ -93,7 +93,7 @@ public partial class Program
             });
 
         builder.Services.AddSingleton<MessageHub>();
-        builder.Services.AddScoped<MessageConsumer>();
+        builder.Services.AddScoped<HelloMessageConsumer>();
 
         var app = builder.Build();
 

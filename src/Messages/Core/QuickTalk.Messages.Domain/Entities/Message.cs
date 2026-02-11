@@ -30,8 +30,8 @@ public sealed class Message(Guid id, string text)
     public DateTime? EditedAt { get; private set; } = null;
     public Guid FromUserId { get; private set; }
     public Guid ToUserId { get; private set; }
-    public MessangerUser? FromUser { get; set; }
-    public MessangerUser? ToUser { get; set; }
+    public MessengerUser? FromUser { get; set; }
+    public MessengerUser? ToUser { get; set; }
 
     public void UpdateText(string text) => Text = text;
 

@@ -6,7 +6,7 @@ namespace QuickTalk.Messages.Persistence.Repository;
 
 public sealed class MessageRepository(MessageDbContext context) : IMessageRepository
 {
-    public async Task<OperationResult> CreateNewUserAsync(MessangerUser user)
+    public async Task<OperationResult> CreateNewUserAsync(MessengerUser user)
     {
         var isUserExists = await context.Users
             .AsNoTracking()
@@ -20,6 +20,18 @@ public sealed class MessageRepository(MessageDbContext context) : IMessageReposi
         await context.Users.AddAsync(user);
         await context.SaveChangesAsync();
         return OperationResult.Success();
+    }
+
+    public async Task<OperationResult<IReadOnlyCollection<ChatPartner>>> GetUserChatPartnersAsync(Guid consumerId)
+    {
+        var existingUser = await context.Users.FirstOrDefaultAsync(u => u.Id == consumerId);
+
+        if (existingUser is null)
+        {
+            return OperationResult.Failure<IReadOnlyCollection<ChatPartner>>(InternalError.UserAlreadyExists($"User with Id: {consumerId} does not exists"));
+        }
+
+        var partners =  
     }
 
     public async Task<OperationResult<IReadOnlyCollection<Message>>> GetUserMessagesAsync(Guid senderId, Guid consumerId)

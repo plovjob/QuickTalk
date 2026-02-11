@@ -5,13 +5,13 @@ using QuickTalk.Shared.Messaging;
 
 namespace QuickTalk.Messages.WebApi.Consumers;
 
-public class NewUserLoggedInConsumer(IMessageRepository userRepository) : IConsumer<IUserRegistered>
+public class NewUserRegisteredConsumer(IMessageRepository userRepository) : IConsumer<IUserRegistered>
 {
     public async Task Consume(ConsumeContext<IUserRegistered> context)
     {
         var id = context.Message.Id;
         var userName = context.Message.UserName;
-        var user = new MessangerUser(id, userName);
+        var user = new MessengerUser(id, userName);
 
         await userRepository.CreateNewUserAsync(user);
     }

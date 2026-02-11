@@ -28,12 +28,18 @@ internal sealed class ChatManager(IHttpClientFactory factory, ILogger<ChatManage
         }
     }
 
-    public async Task<List<MessageDto>?> GetMessagesAsync()
+    public async Task<List<MessageDto>?> GetMessagesAsync(Guid senderId, Guid consumerId)
     {
         try
         {
             var client = factory.CreateClient("WebApi");
-            var response = await client.GetAsync($"api/messages");
+
+            var senderIdParam = senderId.ToString();
+            var consumerIdParam = consumerId.ToString();
+            //var url = $"{client.BaseAddress}/api/messages?sender={senderIdParam}&consumer={consumerIdParam}";
+
+            var response = await client.GetAsync($"api/messages?sender={senderIdParam}&consumer={consumerIdParam}");
+
             if (response.IsSuccessStatusCode)
             {
                 return await response.Content.ReadFromJsonAsync<List<MessageDto>>();

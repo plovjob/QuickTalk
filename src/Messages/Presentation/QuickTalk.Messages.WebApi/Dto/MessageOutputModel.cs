@@ -9,12 +9,11 @@ public class MessageOutputModel()
 
     [Required(AllowEmptyStrings = false)]
     [DisplayFormat(ConvertEmptyStringToNull = false)]
-    public string UserName { get; set; } = null!;
-
-    [Required(AllowEmptyStrings = false)]
-    [DisplayFormat(ConvertEmptyStringToNull = false)]
     public string Text { get; set; } = null!;
 
     public DateTime SentAt { get; set; }
     public DateTime? EditedAt { get; set; } = null;
+
+    public Guid FromUserId { get; set; }
+    public Guid ToUserId { get; set; }
 }

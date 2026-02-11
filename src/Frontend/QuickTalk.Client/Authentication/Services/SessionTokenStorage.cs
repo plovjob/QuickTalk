@@ -38,8 +38,8 @@ public class SessionTokenStorage(ISessionStorageService sessionStorage) : ISessi
     public async ValueTask<Guid> GetCurrentUserIdAsync() =>
         await sessionStorage.GetItemAsync<Guid>("userId");
 
-    public async ValueTask<Guid> GetCurrentUserNameAsync() =>
-        await sessionStorage.GetItemAsync<Guid>("userName");
+    public async ValueTask<string> GetCurrentUserNameAsync() =>
+        await sessionStorage.GetItemAsync<string>("userName");
 
     public async ValueTask<string> GetRefreshTokenAsync() =>
         await sessionStorage.GetItemAsync<string>("refreshToken");

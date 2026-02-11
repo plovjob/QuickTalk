@@ -16,7 +16,6 @@ public static class ServiceCollectionExtensions
         });
 
         services.AddScoped<IMessageRepository, MessageRepository>();
-        services.AddScoped<IUserRepository, UserRepository>();
 
         return services;
     }

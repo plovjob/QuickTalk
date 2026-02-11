@@ -1,6 +1,6 @@
 namespace QuickTalk.Messages.Domain.Entities;
 
-public class MessangerUser(Guid id, string userName)
+public class MessengerUser(Guid id, string userName)
 {
     public Guid Id { get; private set; } = id;
     public string UserName { get; private set; } = userName;

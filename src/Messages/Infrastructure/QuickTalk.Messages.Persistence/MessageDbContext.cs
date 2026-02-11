@@ -7,7 +7,7 @@ namespace QuickTalk.Messages.Persistence;
 public sealed class MessageDbContext(DbContextOptions<MessageDbContext> options) : DbContext(options)
 {
     public DbSet<Message> Messages { get; set; } = null!;
-    public DbSet<MessangerUser> Users { get; set; } = null!;
+    public DbSet<MessengerUser> Users { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

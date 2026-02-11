@@ -46,7 +46,9 @@ else
 
 @code {
 
-    private List<string> messages = new List<string>();
+    private string userName = string.Empty;
+    private Guid userId;
+    private List<MessageDto> messages = null!;
     private string? helloMessage;
     private string? message;
     private string connectionId = string.Empty;
@@ -55,6 +57,11 @@ else
     {
         HubService.UserMessageReceived += OnMessageReceived;
         HubService.HelloMessageReceived += OnHelloMessageReceived;
+
+        userName = await SessionStorage.GetCurrentUserNameAsync();
+        userId = await SessionStorage.GetCurrentUserIdAsync();
+
+        // messages = await GetUserMessagesAsync()
 
         await ConnectAsync();
     }
@@ -67,26 +74,31 @@ else
         await HubService.SendHelloMessageAsync();
     }
 
+    // private async Task SendMessageAsync()
+    // {
+    //     if (!HubService.IsConnected)
+    //     {
+    //         throw new ArgumentNullException();
+    //     }
+
+    //     var currentUserId = SessionStorage.GetCurrentUserIdAsync().Result;
+    //     var userName = SessionStorage.GetCurrentUserNameAsync().Result;
+    //     var messageDto = new MessageDto(Guid.NewGuid(), currentUserId, Guid.NewGuid(), userName, message);
+
+    //     await SaveMessage(messageDto);
+
+    //     await HubService.SendMessageAsync(userName!, message!);
+    // }
+
     private async Task SendMessageAsync()
     {
-        if (!HubService.IsConnected)
-        {
-            throw new ArgumentNullException();
-        }
-
-        var currentUserId = SessionStorage.GetCurrentUserIdAsync().Result;
-        var userName = SessionStorage.GetCurrentUserNameAsync().Result;
-        var messageDto = new MessageDto(Guid.NewGuid(), currentUserId, Guid.NewGuid(), userName, message);
-
-        await SaveMessage(messageDto);
-
-        await HubService.SendMessageAsync(userName!, message!);
+        await Task.CompletedTask;
     }
 
     private void OnMessageReceived(string userName, string message)
     {
-        messages.Add(message);
-        StateHasChanged();
+        // messages.Add(message);
+        // StateHasChanged();
     }
 
     private void OnHelloMessageReceived(string message)
@@ -98,5 +110,11 @@ else
     private async Task SaveMessage(MessageDto content)
     {
         await ChatManager.SendMessageAsync(content);
+    }
+
+    private async Task<List<MessageDto>> GetUserMessagesAsync(Guid senderId, Guid consumerId)
+    {
+        var messages = await ChatManager.GetMessagesAsync(senderId, consumerId);
+        return messages ?? new List<MessageDto>();
     }
 }
